@@ -1,9 +1,12 @@
 header {
     width: 100%;
-    height: 13%;
+    height: 5%;
     text-align: center;
-    padding: 2rem;
+    padding: 1.7rem;
     box-shadow: 1px 1px 1px black;
+    /* background-color: #c18ff7; */
+    background-color: black;
+    color: white;
 
     display: flex;
     justify-content: space-between;
@@ -11,9 +14,16 @@ header {
 }
 
 header .botoes-header {
-    width: 40%;
+    width: 30%;
+    font-size: 7px;
     display: flex;
     justify-content: space-between;
     
 }
 
+header #logo {
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
