@@ -2,15 +2,47 @@ footer {
     width: 100%;
     padding: 0.5rem;
     text-align: center;
-    /* box-shadow: inset 1px 1px 1px black;
-    background-color: #c18ff7; */
-    /* background-image: url(/tela_login/img/fundo.png); */
     background-image: url(/img/fundo1.png);
     background-size: cover;
+    color: whitesmoke;
+
 }
 
 footer p {
     color: rgb(119, 108, 108);
     font-size: 1rem;
     font-weight: 300;
+}
+
+
+.cards-contacts .card {
+    display: flex;
+    justify-content: center;
+    margin-top: .3rem;
+}
+
+.cards-contacts .card p {
+    margin-left: .7rem;
+    color: whitesmoke;
+}
+
+.email-icon {
+    padding: 1px 13px;
+
+    background-image: url(/img/email-icon.png);
+    background-size: cover;
+}
+
+.insta-icon {
+    padding: 1px 13px;
+
+    background-image: url(/img/insta-icon.png);
+    background-size: cover;
+}
+
+.twitter-icon {
+    padding: 1px 13px;
+
+    background-image: url(/img/twitter-icon.png);
+    background-size: cover;
 }
