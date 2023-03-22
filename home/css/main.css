@@ -1,0 +1,109 @@
+.container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+    color: whitesmoke;
+
+    background-image: url(/fundos-site/fundo5.png);
+    background-size: cover;
+}
+
+.container .container-cards {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .container-cards .card {
+    width: 20rem;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: whitesmoke;
+    padding: 40px 40px;
+    background-color: rgb(51, 45, 45);
+    margin: 1rem 1rem;
+    border-radius: 1.5rem;
+
+    background-image: url(/fundos-site/fundo1.png);
+}
+
+.container .container-cards .card:hover {
+    background-image: none;
+    background-color: rgb(83, 16, 61);
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    /* padding: 50px 50px; */
+    box-shadow: 15px 15px 15px -6px black;
+    
+}
+
+.icone-usuario {
+    padding: 10px 22px;
+
+    background-image: url(/home/img/usuario.png);
+    background-size: cover;
+}
+
+.icone-usuario {
+    padding: 10px 22px;
+
+    background-image: url(/home/img/usuario.png);
+    background-size: cover;
+}
+
+.icone-cursos {
+    padding: 10px 22px;
+
+    background-image: url(/home/img/cursos.png);
+    background-size: cover;
+}
+
+.icone-parcerias {
+    padding: 10px 22px;
+
+    background-image: url(/home/img/parcerias.png);
+    background-size: cover;
+}
+
+.icone-feedback {
+    padding: 10px 22px;
+
+    background-image: url(/home/img/feedback.png);
+    background-size: cover;
+}
+
+.icone-suporte {
+    padding: 10px 22px;
+
+    background-image: url(/home/img/suporte.png);
+    background-size: cover;
+}
+
+.icone-pagamentos {
+    padding: 10px 22px;
+
+    background-image: url(/home/img/pagamento.png);
+    background-size: cover;
+}
+
+.container .container-cards .card h2 {
+    margin-top: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:visited {
+    color: inherit;
+}

@@ -1,0 +1,16 @@
+footer {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    /* box-shadow: inset 1px 1px 1px black;
+    background-color: #c18ff7; */
+    /* background-image: url(/tela_login/img/fundo.png); */
+    background-image: url(/fundos-site/fundo1.png);
+    background-size: cover;
+}
+
+footer p {
+    color: rgb(119, 108, 108);
+    font-size: 1rem;
+    font-weight: 300;
+}
