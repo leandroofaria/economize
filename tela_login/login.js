@@ -1,5 +1,5 @@
 const form = document.querySelector('#form');
-const email = doument.querySelector('#email');
+const email = document.querySelector('#email');
 const senha = document.querySelector('#password');
 
 form.addEventListener("submit", (e) =>{
