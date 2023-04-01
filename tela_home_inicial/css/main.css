@@ -11,4 +11,7 @@ main {
 #container-icons {
     display: flex;
 }
-
+#custom-video-card {
+    background-image: url(/img/fundo1.png);
+    color: whitesmoke;
+}
