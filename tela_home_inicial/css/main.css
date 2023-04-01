@@ -1,51 +1,14 @@
-.container {
-    width: 100%;
-    height: 100%;
 
+
+#custom-sobre {
+    margin-top: 3rem;
+}
+
+main {
+    color: whitesmoke;
+}
+
+#container-icons {
     display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: space-around;
-    color: whitesmoke;
-
-    background-image: url(/img/fundo3.png);
-    background-size: cover;
 }
 
-.container .text hr {
-    border: 2.5px solid rgb(59, 0, 42);
-    border-radius: 3rem;
-    margin-bottom: 1rem;
-}
-.container .text {
-    font-size: 1.4rem;
-}
-
-.container .text p{
-    margin-top: 1.4rem;
-    text-align: center;
-    padding: 8px 8px;
-    color: black;
-    background-color: whitesmoke;
-    width: 25%;
-    border-radius: 3rem;
-}
-
-.container .text p:hover {
-    background-image: url(/img/fundo4.png);
-    cursor: pointer;
-    color: whitesmoke;
-}
-.container .img {
-    padding: 20px 20px;
-    background: cover;
-}
-
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-a:visited {
-    color: inherit;
-}
