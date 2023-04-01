@@ -15,3 +15,15 @@ main {
     background-image: url(/img/fundo1.png);
     color: whitesmoke;
 }
+
+#custom-container-plan {
+    background-image: url(/img/fundo1.png);
+    color: whitesmoke;
+    border-color: whitesmoke;
+}
+
+#customizar-card {
+    background-image: url(/img/fundo1.png);
+    color: whitesmoke;
+    border: 1rem black;
+}
