@@ -6,5 +6,4 @@ main {
 #custom-video-card {
     background-image: url(/img/fundo1.png);
     color: whitesmoke;
-    transition: 0.3;
 }
