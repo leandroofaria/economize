@@ -65,7 +65,7 @@
                 </div>
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro</h5>
-                  <form>
+                  <form  class="form" id="form" method="get" action="/tela_home_user/index.html">
       
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
@@ -80,12 +80,12 @@
                     <hr>
       
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
                       <label for="floatingPassword">Senha</label>
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                      <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
                       <label for="floatingPasswordConfirm">Confirme a Senha</label>
                     </div>
       
