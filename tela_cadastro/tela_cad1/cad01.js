@@ -30,7 +30,10 @@ form.addEventListener("submit", (e) =>{
         alert("As senhas não são iguais");
         return;
     }
-    else{
+    else if (!validaPassword(password.value)) {
+        alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
+        return;
+    } else {
         window.location = "/tela_cadastro/tela_cad2/index.html";
     }
 });
