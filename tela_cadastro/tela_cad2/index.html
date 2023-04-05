@@ -34,16 +34,16 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'" >Sobre nós</a>
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
@@ -80,16 +80,16 @@
                     <hr>
       
                     <div class="form-floating mb-3">
-                      <input type="date" class="form-control" id="month" placeholder="Password">
+                      <input type="date" class="form-control" id="month" placeholder="Password" required>
                       <label for="month">Nascimento</label>
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="checkbox" name="" id="checkbox"><span style="margin-left: 3px;">Eu concordo com os <a class=" mt-2 small" href="#">Termos de uso.</a></span>
+                      <input type="checkbox" name="" id="checkbox" required><span style="margin-left: 3px;">Eu concordo com os <a class=" mt-2 small" href="#">Termos de uso.</a></span>
                     </div>
       
                     <div class="d-grid mb-2">
-                      <button class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase" type="submit" style="background-color: blueviolet;">CADASTRAR</button>
+                      <button class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase" type="submit" style="background-color: blueviolet;" onclick="window.location.href = '/tela_home_user/index.html'" >CADASTRAR</button>
                     </div>
       
                     <a class="d-block text-center mt-2 small" href="#">Já possui uma conta? Entre!</a>
