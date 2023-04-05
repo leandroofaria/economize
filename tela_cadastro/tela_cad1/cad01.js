@@ -15,19 +15,19 @@ form.addEventListener("submit", (e) =>{
     //valida email(beta)
     
     if(email.value === "" || !isEmailValido(mail.value)){
-        alert("Bota teu email");
+        alert("Insira um email válido!");
         return;
     }
 
     //verifica a senha(beta)
     if(senha.value === "" || !validaPassword(password.value)){
-        alert("A senha precisa de 5 characteres, sendo um numero e um caracter maiusculo");
+        alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
         return;
     }
 
     //confirma a senha(beta)
     if(Confpassword.value === "" || confirmaPassword(_confirmePassword.value) != validaPassword(password.value)){
-        alert("as senhas não são iguais");
+        alert("As senhas não são iguais");
         return;
     }
 });
