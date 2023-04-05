@@ -14,6 +14,8 @@ form.addEventListener("submit", (e) =>{
     if(senha.value === "" || !validaPassword(password.value)){
         alert("A senha precisa de 5 characteres, sendo um numero e um caracter maiusculo");
         return;
+    } else {
+        window.location = "tela_home_user_html/index.html"
     }
 });
 
