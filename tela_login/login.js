@@ -1,13 +1,13 @@
 const form = document.querySelector('#form');
-const email = document.querySelector('#email');
+const email = document.querySelector('#mail');
 const senha = document.querySelector('#password');
 
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
 
 
-    if(email.value === "" || !isEmailValido(email.value)){
-        alert("Bota teu email");
+    if(email.value === "" || !isEmailValido(mail.value)){
+        alert("Insira seu email correto!");
         return;
     }
 
@@ -17,13 +17,13 @@ form.addEventListener("submit", (e) =>{
     }
 });
 
-function isEmailValido(email){
+function isEmailValido(mail){
     const emailRegex = new RegExp(
         //usario@host.com e etc
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
     );
 
-    if (emailRegex.test(email)){
+    if (emailRegex.test(mail)){
         return true;
     }else{
         return false;
