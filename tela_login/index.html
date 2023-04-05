@@ -37,20 +37,20 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre nós</a>
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn">Cadastrar</a>
+                    <a href="/tela_cadastro/tela_cad1/index.html" class="btn btn-light" id="custom-btn">Cadastrar</a>
                   </form>
               </div>
             </div>
@@ -72,13 +72,13 @@
                       <form id="form" method="get" action="/tela_home_user/index.html">
           
                         <div class="form-floating mb-3">
-                        <input type="text" name = "email" class="form-control" id="mail" placeholder="myemail" required>
+                        <input type="text" name = "email" class="form-control" id="mail" placeholder="myemail" required pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$">
                           <label for="email">Email</label>
                         </div>
         
           
                         <div class="form-floating mb-3">
-                          <input type="password" name = "senhas" class="form-control" id="password" placeholder="Password" required>
+                          <input type="password" name = "senhas" class="form-control" id="password" placeholder="Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z$*&@#]{5,}$">
                           <label for="floatingPassword">Senha</label>
                         </div>
           
