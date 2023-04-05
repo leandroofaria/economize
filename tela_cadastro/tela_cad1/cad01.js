@@ -1,19 +1,20 @@
 const container = document.querySelector('.container');
 const nome = document.querySelector('#name');
-const email = document.querySelector('#email');
+const email = document.querySelector('#mail');
 const senha = document.querySelector('#password');
-const confirmar_senha = document.querySelector('#confirme-password');
+const Confpassword = document.querySelector('#_confirmePassword');
 
 
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
     //valida nome (beta)
     if(nome.value === ""){
-        alert("Envia a porra do seu nome");
+        alert("Envie o seu nome");
         return;
     }
     //valida email(beta)
-    if(email.value === "" || !isEmailValido(email.value)){
+    
+    if(email.value === "" || !isEmailValido(mail.value)){
         alert("Bota teu email");
         return;
     }
@@ -25,21 +26,19 @@ form.addEventListener("submit", (e) =>{
     }
 
     //confirma a senha(beta)
-    if(confirmar_senha.value === "" || confirmaPassword(Confpassword.value) != validaPassword){
+    if(Confpassword.value === "" || confirmaPassword(_confirmePassword.value) != validaPassword(password.value)){
         alert("as senhas não são iguais");
         return;
     }
-
 });
 
 //Funcao valida email
-function isEmailValido(email){
+function isEmailValido(mail){
     const emailRegex = new RegExp(
         //usario@host.com e etc
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
     );
-
-    if (emailRegex.test(email)){
+    if (emailRegex.test(mail)){
         return true;
     }else{
         return false;
@@ -57,11 +56,11 @@ function validaPassword(password){
         return false;
     }
 }
-function confirmaPassword(Confpassword){
+function confirmaPassword(_confirmePassword){
     const senhaConfRegex = new RegExp(
         /^(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z$*&@#]{5,}$/
     );
-    if (senhaConfRegex.test(Confpassword)){
+    if (senhaConfRegex.test(_confirmePassword)){
         return true;
     }else{
         return false;
