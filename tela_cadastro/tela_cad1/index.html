@@ -65,7 +65,7 @@
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro</h5>
                   
-                  <form method = "get" action="/tela_cadastro/tela_cad2/index.html">
+                  <form method = "get" action="/tela_cadastro/tela_cad2/index.html" onsubmit="return validarSenha()" >
 
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="name" placeholder="myusername" required>
@@ -73,19 +73,19 @@
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="mail" placeholder="name@example.com">
+                      <input type="email" class="form-control" id="mail" placeholder="name@example.com" required>
                       <label for="floatingInputEmail">Email</label>
                     </div>
       
                     <hr>
       
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="password" placeholder="Password">
+                      <input type="password" class="form-control" id="password" id="senha1" placeholder="Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
                       <label for="floatingPassword">Senha</label>
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="_confirmePassword" placeholder="Confirm Password">
+                      <input type="password" class="form-control" id="_confirmePassword" id="senha2"  placeholder="Confirm Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
                       <label for="floatingPasswordConfirm">Confirme a Senha</label>
                     </div>
       
@@ -115,6 +115,7 @@
           </div>
         </div>
       </body>
+
   </main>
 
 
