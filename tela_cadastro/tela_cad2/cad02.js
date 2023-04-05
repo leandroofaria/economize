@@ -13,6 +13,8 @@ form.addEventListener("submit", (e) =>{
     if(numero.value === '' || !validaNumero(number.value)){
         alert("Insira o numero corretamente")
         return;
+    } else {
+        window.location = "/tela_home_user/index.html"
     }
 });
 

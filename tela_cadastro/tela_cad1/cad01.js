@@ -29,6 +29,9 @@ form.addEventListener("submit", (e) =>{
     if(Confpassword.value === "" || confirmaPassword(_confirmePassword.value) != validaPassword(password.value)){
         alert("As senhas não são iguais");
         return;
+    } else { 
+        window.location = "/tela_cadastro/tela_cad2/index.html" 
+
     }
 });
 
