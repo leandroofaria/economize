@@ -47,14 +47,14 @@
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn">Entrar</a>
+                    <a href="/tela_login/index.html" class="btn btn-light" id="custom-btn">Entrar</a>
                   </form>
               </div>
             </div>
           </nav>
       </header>
   <main>
-    <body>
+      <body>
         <div class="container">
           <div class="row">
             <div class="col-lg-10 col-xl-9 mx-auto">
@@ -64,33 +64,32 @@
                 </div>
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro</h5>
-                  
-                  <form id="form" method = "get" action="/tela_cadastro/tela_cad2/index.html">
+                  <form id="form" method="get" action="/tela_cadastro/tela_cad2/index.html">
 
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="name" placeholder="myusername" required>
+                      <input type="text" name="nome" class="form-control" id="name" placeholder="myusername" required>
                       <label for="floatingInputUsername">Nome Completo</label>
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="mail" placeholder="name@example.com">
+                      <input type="email" name="email" class="form-control" id="mail" placeholder="name@example.com" required>
                       <label for="floatingInputEmail">Email</label>
                     </div>
       
                     <hr>
       
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="password"  placeholder="Password" >
+                      <input type="password" name="senha" class="form-control" id="password"  placeholder="Password" >
                       <label for="floatingPassword">Senha</label>
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="_confirmePassword"  placeholder="Confirm Password" >
+                      <input type="password" name="senha" class="form-control" id="_confirmePassword"  placeholder="Confirm Password"  >
                       <label for="floatingPasswordConfirm">Confirme a Senha</label>
                     </div>
       
                     <div class="d-grid mb-2">
-                      <button class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase" type="submit" style="background-color: blueviolet;">CONTINUAR</button>
+                      <button type="submit" class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">CONTINUAR</button>
                     </div>
       
                     <a class="d-block text-center mt-2 small" href="/tela_login/index.html">Já possui uma conta? Entre!</a>
@@ -115,7 +114,6 @@
           </div>
         </div>
       </body>
-
   </main>
 
 
