@@ -34,16 +34,16 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre nós</a>
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
@@ -64,7 +64,9 @@
                 </div>
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro</h5>
-                  <form id="form">
+                  
+                  <form id="form" class="form" id="form" method="get" action="/tela_cadastro/tela_cad2/">
+
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="name" placeholder="myusername" required>
                       <label for="floatingInputUsername">Nome Completo</label>
