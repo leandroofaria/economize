@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const nome = document.querySelector('#name');
+const name = document.querySelector('#nome');
 const email = document.querySelector('#mail');
 const senha = document.querySelector('#password');
 const Confpassword = document.querySelector('#_confirmePassword');
@@ -8,8 +8,8 @@ const Confpassword = document.querySelector('#_confirmePassword');
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
     //valida nome (beta)
-    if(nome.value === ""){
-        alert("Envie o seu nome");
+    if(nome.value === "" || !isNomeValido(nome.value)){
+        alert("Envie o seu nome, ele tem que possuir no minimo 3 letras não podendo conter somante numeros");
         return;
     }
     //valida email(beta)
@@ -37,6 +37,18 @@ form.addEventListener("submit", (e) =>{
         window.location = "/tela_cadastro/tela_cad2/index.html";
     }
 });
+
+function isNomeValido(nome){
+    const nomeRegex = new RegExp(
+        //o nome tem que ter mais de 3 caracteres e não pode conter somente numeros
+        /^[a-zA-Z]{3,}$/
+    );
+    if(nomeRegex.test(nome)){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 //Funcao valida email
 function isEmailValido(mail){

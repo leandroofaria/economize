@@ -22,8 +22,8 @@ form.addEventListener("submit", (e) =>{
 //função valida cpf
 function validaCPF(cpf){
     const cpfRegex = new RegExp(
-        //xxx.xxx.xxx-xx
-        /^[0-9]{11,}$/
+        //xxx.xxx.xxx-xx ou xxxxxxxxxxx
+        /^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}/
     );
     if(cpfRegex.test(cpf)){
         return true;
@@ -34,8 +34,8 @@ function validaCPF(cpf){
 //função valida numero
 function validaNumero(number){
     const numberRegex = new RegExp(
-        //xxxxxxxxx
-    /^[0-9]{9,}$/
+        //(xx) xxxxx-xxxx
+    /^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/
     );
     if(numberRegex.test(number)){
         return true;
