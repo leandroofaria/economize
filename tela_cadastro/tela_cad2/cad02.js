@@ -1,6 +1,7 @@
 const form = document.querySelector('#form');
 const CPF = document.querySelector('#cpf');
 const numero = document.querySelector('#number');
+const mes = document.querySelector('month')
 
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
