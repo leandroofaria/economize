@@ -28,3 +28,11 @@ div.jumbotron {
     flex-direction: column;
     margin-top: 10rem;
 }
+
+#barra {
+    width: 3.2rem;
+    background-color: whitesmoke;
+    background-image: url(/img/fundo3.png);
+    border: black;
+    transition:0.3s
+}
