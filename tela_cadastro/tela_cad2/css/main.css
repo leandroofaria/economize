@@ -25,3 +25,9 @@ body {
     color: white !important;
     background-color: #3b5998;
   }
+
+  .mb-3 p{
+    font-size: 15px;
+      color: red;
+      visibility: hidden;
+  }

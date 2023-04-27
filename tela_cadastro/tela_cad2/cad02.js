@@ -7,15 +7,18 @@ form.addEventListener("submit", (e) =>{
     e.preventDefault();
     //verifica cpf
     if(CPF.value === '' || !validaCPF(cpf.value)){
-        alert("Insira o CPF corretamente, por favor")
+        error(CPF, "Insira o CPF corretamente, por favor")
         return;
+    }else{
+        success(CPF);
     }
 
     if(numero.value === '' || !validaNumero(number.value)){
-        alert("Insira o numero corretamente")
+        error(numero, "Insira o numero corretamente")
         return;
     }
     else{
+        success(numero);
         window.location = "/tela_home_user/index.html";
     }
 });
@@ -43,4 +46,21 @@ function validaNumero(number){
     }else{
         return false;
     }
+}
+
+
+//mensagem de alerta
+function error(element, msg){
+    element.style.border = '3px red solid'
+    const parent = element.parentElement;
+    const p = parent.querySelector('p');
+    p.textContent = msg;
+    p.style.visibility = 'visible';
+}
+
+function success(element){
+    element.style.border = '3px green solid'
+    const parent = element.parentElement;
+    const p = parent.querySelector('p');
+    p.style.visibility = 'hidden';
 }
