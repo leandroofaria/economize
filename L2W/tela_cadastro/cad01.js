@@ -1,61 +1,55 @@
 console.log("Oi");
 alert('oieee111');
 
-const container = document.querySelector('.container');
+const Cadform = document.getElementById("Cadform");
 const nome = document.querySelector('#nome');
 const email = document.querySelector('#email');
 const senha = document.querySelector('#password');
-const Confpassword = document.querySelector('#_confirmePassword');
-const form = document.querySelector('#form');
+const Confpassword = document.querySelector("#_confirmePassword");
 const CPF = document.querySelector('#cpf');
 const numero = document.querySelector('#number');
 const mes = document.querySelector('#month')
 
 
-form.addEventListener("submit", (e) =>{
+Cadform.addEventListener("submit", async(e) =>{
     e.preventDefault();
     //valida nome (beta)
     if(nome.value === "" || !isNomeValido(nome.value)){
-        error(nome, "O nome deve possuir no minimo 3 letras não podendo conter somante numeros");
+        alert("O nome deve possuir no minimo 3 letras não podendo conter somante numeros");
         return;
-    }else{
-        success(nome);
     }
     //valida email(beta)
     
     if(email.value === "" || !isEmailValido(email.value)){
-        error(email, "Insira um email válido!");
+        alert("Insira um email válido!");
         return;
-    }else{
-        success(email)
     }
 
     //verifica a senha(beta)
     if(senha.value === "" || !validaPassword(senha.value)){
-        error(senha, "A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
+        alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
         return;
-    }else{
-        success(senha)
     }
 
     //confirma a senha(beta)
-    if(Confpassword.value === "" || confirmaPassword(Confpassword.value) != validaPassword(password.value)){
-        error(Confpassword, "As senhas não são iguais");
+    if(Confpassword.value === "" || confirmaPassword(Confpassword.value) != validaPassword(senha.value)){
+        alert("As senhas não são iguais");
         return;
     }
-    else if (!validaPassword(senha.value)) {
-        error(senha, "A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
+    else if(!validaPassword(senha.value)){
+        alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
         return;
     } if(CPF.value === '' || !validaCPF(CPF.value)){
-        error(CPF, "Insira o CPF corretamente, por favor")
+        alert("Insira o CPF corretamente, por favor")
         return;
-    }else{
-        success(CPF);
     }
 
     if(numero.value === '' || !validaNumero(numero.value)){
-        error(numero, "Insira o numero corretamente")
+        alert("Insira o numero corretamente")
         return;
+    }else{
+        window.location = "/tela_cadastro/tela_cad2/index.html";
+        window.location = "/L2W/home_inicial.php"
     }
 });
 
@@ -129,37 +123,4 @@ function validaNumero(numero){
     }else{
         return false;
     }
-}
-
-//mensagem de erro
-function error(element, msg){
-    element.style.border = '3px red solid'
-    const parent = element.parentElement;
-    const p = parent.querySelector('p');
-    p.textContent = msg;
-    p.style.visibility = 'visible';
-}
-
-function success(element){
-    element.style.border = '3px green solid'
-    const parent = element.parentElement;
-    const p = parent.querySelector('p');
-    p.style.visibility = 'hidden';
-}
-
-
-//mensagem de alerta
-function error(element, msg){
-    element.style.border = '3px red solid'
-    const parent = element.parentElement;
-    const p = parent.querySelector('p');
-    p.textContent = msg;
-    p.style.visibility = 'visible';
-}
-
-function success(element){
-    element.style.border = '3px green solid'
-    const parent = element.parentElement;
-    const p = parent.querySelector('p');
-    p.style.visibility = 'hidden';
 }

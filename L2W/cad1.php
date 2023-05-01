@@ -22,7 +22,7 @@ if(isset($_POST['email'])) {
 
 
 
-<!doctype html>
+<!<doctype html>
 <html lang="pt-BR">
 
 <head>
@@ -78,6 +78,7 @@ if(isset($_POST['email'])) {
           </nav>
       </header>
   <main>
+
       <body>
         <div class="container">
           <div class="row">
@@ -88,8 +89,7 @@ if(isset($_POST['email'])) {
                 </div>
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro</h5>
-                  <form action="" method="POST" id="form">
-
+                  <form action="" method="POST" id="Cadform">
                     <div class="form-floating mb-3">
                       <input type="text" name="nome" class="form-control" id="nome" placeholder="myusername">
                       <label for="floatingInputUsername">Nome Completo</label>
@@ -108,7 +108,7 @@ if(isset($_POST['email'])) {
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="password" name="senha" class="form-control" id="#_confirmePassword"  placeholder="Confirm Password"  >
+                      <input type="password" name="Confsenha" class="form-control" id="_confirmePassword"  placeholder="Confirm Password"  >
                       <label for="floatingPasswordConfirm">Confirme a Senha</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -125,13 +125,13 @@ if(isset($_POST['email'])) {
       
                     <div class="form-floating mb-3">
                       <input type="date" name="dataNasc" class="form-control" id="month" placeholder="Password">
-                      <label for="month">Nascimento</label>
+                      <label for="month">Nascimento</label> 
                     </div>
 
                   
       
                     <div class="d-grid mb-2">
-                      <button type="submit" class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">CONTINUAR</button>
+                      <button type="submit" class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase" id="btn" style="background-color: blueviolet;">CONTINUAR</button>
                     </div>
       
                     <a class="d-block text-center mt-2 small" href="login.php">Já possui uma conta? Entre!</a>
@@ -171,11 +171,10 @@ if(isset($_POST['email'])) {
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>
   </div>
-
+    
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="/L2W/tela_cadastro/cad01.js"></script>
-  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
@@ -183,6 +182,7 @@ if(isset($_POST['email'])) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
 </body>
 
 </html>
