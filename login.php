@@ -136,7 +136,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
           
                         <hr class="my-4">
           
-                        <div class="d-grid mb-2">
+                        <!-- <div class="d-grid mb-2">
                           <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
                             <i class="fab fa-google me-2"></i> Entrar com o Google
                           </button>
@@ -146,7 +146,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
                           <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
                             <i class="fab fa-facebook-f me-2"></i> Entrar com o FAcebook
                           </button>
-                        </div>
+                        </div> -->
           
                       </form>
                     </div>
