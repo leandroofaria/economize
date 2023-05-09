@@ -17,9 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS /L2W/tela_home_inicial/css/reset.css -->
-    <link rel="stylesheet" href="/learn2work/tela_home_inicial/css/reset.css">
-    <link rel="stylesheet" href="/learn2work/tela_home_inicial/css/main.css">
-    <link rel="stylesheet" href="/learn2work/tela_home_inicial/css/header.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_inicial/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_inicial/main.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_inicial/header.css">
     
 </head>
 
