@@ -24,8 +24,8 @@ include('protect.php');
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/L2W/tela_perfil/reset.css">
-    <link rel="stylesheet" href="/L2W/tela_perfil/header.css">
+    <link rel="stylesheet" href="/learn2work/tela_perfil/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_perfil/header.css">
 
 </head>
 

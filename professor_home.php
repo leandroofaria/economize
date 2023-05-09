@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/L2W/tela_profe/reset.css">
-  <link rel="stylesheet" href="/L2W/tela_profe/css/header.css">
-  <link rel="stylesheet" href="/L2W/tela_profe/main.css">
+  <link rel="stylesheet" href="/learn2work/tela_profe/reset.css">
+  <link rel="stylesheet" href="/learn2work/tela_profe/css/header.css">
+  <link rel="stylesheet" href="/learn2work/tela_profe/main.css">
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">

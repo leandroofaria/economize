@@ -17,9 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS /L2W/tela_home_inicial/css/reset.css -->
-    <link rel="stylesheet" href="/L2W/tela_home_inicial/css/reset.css">
-    <link rel="stylesheet" href="/L2W/tela_home_inicial/css/main.css">
-    <link rel="stylesheet" href="/L2W/tela_home_inicial/css/header.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_inicial/css/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_inicial/css/main.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_inicial/css/header.css">
     
 </head>
 
@@ -67,7 +67,7 @@
         <p class="lead">Transformando seu potencial em habilidades práticas para alcançar o sucesso profissional <br> <br> Aprenda, pratique e conquiste com nossa plataforma de ensino online.</p>
       </div>
       <div class="col-md-5" id="container-icons">
-        <img id="container-icons-card" class="featuretteimage img-fluid mx-auto" src="/L2W/img/icon.png" style="height: 25rem; border-radius: 1rem;">
+        <img id="container-icons-card" class="featuretteimage img-fluid mx-auto" src="/learn2work/img/icon.png" style="height: 25rem; border-radius: 1rem;">
       </div>
     </div>
 
@@ -81,7 +81,7 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="color: black;">
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/comunicacao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Comunicação No Trabalho</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -93,7 +93,7 @@
 
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/administracao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/administracao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Administração Do Tempo.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -104,7 +104,7 @@
             </div>
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/postura.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/postura.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Postura Social E No Trabalho</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -116,7 +116,7 @@
     
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/matematica.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/matematica.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Matemática Financeira</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -127,7 +127,7 @@
             </div>
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/inovacao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/inovacao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Inovação Empresarial</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -138,7 +138,7 @@
             </div>
             <div class="col" style="border: 5rem black;">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/atendimento.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/atendimento.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Atendimento Ao Cliente</p>
                   <div class="d-flex justify-content-between align-items-center">

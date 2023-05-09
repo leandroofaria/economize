@@ -23,9 +23,9 @@ include('protect.php');
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./tela_home_user/css/reset.css">
-    <link rel="stylesheet" href="./tela_home_user/css/header.css">
-    <link rel="stylesheet" href="./tela_home_user/css/main.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_user/css/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_user/css/header.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_user/css/main.css">
 
 </head>
 
@@ -75,7 +75,7 @@ include('protect.php');
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="color: black;">
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/comunicacao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Comunicação No Trabalho</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -90,7 +90,7 @@ include('protect.php');
 
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/administracao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/administracao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Administração Do Tempo.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -104,7 +104,7 @@ include('protect.php');
             </div>
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/postura.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/postura.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Postura Social E No Trabalho</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -119,7 +119,7 @@ include('protect.php');
     
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/matematica.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/matematica.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Matemática Financeira</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -133,7 +133,7 @@ include('protect.php');
             </div>
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/inovacao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/inovacao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Inovação Empresarial</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -147,7 +147,7 @@ include('protect.php');
             </div>
             <div class="col" style="border: 5rem black;">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/atendimento.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/atendimento.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Atendimento Ao Cliente</p>
                   <div class="d-flex justify-content-between align-items-center">

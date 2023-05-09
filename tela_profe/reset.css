@@ -5,3 +5,8 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
 }
+
+body {
+    background-image: url(/learn2work/img/fundo3.png);
+    background-size: cover;
+}

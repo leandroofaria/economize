@@ -93,9 +93,9 @@ if(isset($_POST['email'])) {
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/L2W/tela_cadastro/reset.css">
-    <link rel="stylesheet" href="/L2W/tela_cadastro/main.css">
-    <link rel="stylesheet" href="/L2W/tela_cadastro/header.css">
+    <link rel="stylesheet" href="/learn2work/tela_cadastro/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_cadastro/main.css">
+    <link rel="stylesheet" href="/learn2work/tela_cadastro/header.css">
 
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">

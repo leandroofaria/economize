@@ -13,14 +13,14 @@ div.jumbotron {
 
 #caixa {
     margin-top: 1.5rem;
-    background-image: url(/L2W/img/fundo3.png);
+    background-image: url(/learn2work/img/fundo3.png);
     background-size: cover;
     transition: 0.5s;
 }
 
 #caixa:hover {
     cursor: pointer;
-    background-image: url(/L2W/img/fundo4.png);
+    background-image: url(/learn2work/img/fundo4.png);
 }
 
 #footer {
@@ -32,7 +32,7 @@ div.jumbotron {
 #barra {
     width: 3.2rem;
     background-color: whitesmoke;
-    background-image: url(/L2W/L2W/img/fundo3.png);
+    background-image: url(/learn2work/img/fundo3.png);
     border: black;
     transition:0.3s
 }
