@@ -1,6 +1,7 @@
 <?php
 
 include('protect.php');
+include('UserData.php');
 
 ?>
 
@@ -56,6 +57,9 @@ include('protect.php');
                     <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
                   </li>
                 </ul>
+                <li class="d-flex" id="text-header" >
+                    <a>Bem-vindo <?php echo $user_data['nome'];  ?>!</a>
+                  </li>
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'perfil.php'">Meu Perfil</a>
                   </form>

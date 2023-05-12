@@ -8,8 +8,9 @@ if(isset($_POST['email'])) {
   $nome = $_POST['nome'];
   $cpf = $_POST['cpf'];
   $numTel = $_POST['numTel'];
-  $dataNasc = $_POST['dataNasc'];
   $senhaConf = $_POST['senha_conf'];
+  $data_nascimento = $_POST["data_nascimento"];
+  
 
   // Validando a senha (mínimo 8 caracteres, pelo menos uma letra e um número)
   $senha_regex = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
@@ -24,7 +25,7 @@ if(isset($_POST['email'])) {
   $cpf_regex = "/^[0-9]{11}$/";
 
   // validação para pessoas nascidas após 1900:
-  $dataNasc_regex = "/^(19[0-9][0-9]|20[0-2][0-9])-([0][1-9]|[1][0-2])-([0][1-9]|[1-2][0-9]|[3][0-1])$/";
+  $data_nascimento_regex = "/^(19[0-9][0-9]|20[0-2][0-9])-([0][1-9]|[1][0-2])-([0][1-9]|[1-2][0-9]|[3][0-1])$/";
 
 
 
@@ -44,7 +45,7 @@ if(isset($_POST['email'])) {
   }else if (strlen($_POST['numTel']) == 0){
     echo 'Preencha o número de telefone';
 
-  }else if (strlen($_POST['dataNasc']) == 0){
+  }else if (strlen($_POST['data_nascimento']) == 0){
     echo 'Preencha a sua data de nascimento';
 
   } else if (!preg_match($senha_regex, $_POST['senha'])){
@@ -61,18 +62,21 @@ if(isset($_POST['email'])) {
   } else if (!preg_match($numTel_regex, $_POST['numTel'])){
     echo "Número de telefone inválido! O número deve estar no formato (XX) XXXX-XXXX.";
     
-  } else if(!preg_match($dataNasc_regex, $_POST['dataNasc'])){
+  } else if(!preg_match($data_nascimento_regex, $_POST['data_nascimento'])){
     echo "Data de nascimento invalida! tente novamente!";
   
   } else if ($_POST['senha'] !== $_POST['senha_conf']) {
     echo "As senhas são diferentes!";
   } else {
-    $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, dataNasc) VALUES('$email', '$senha', '$nome', $cpf, $numTel, $dataNasc)");
+    $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
     header('location: home_user.php');
   }
     
 
 }
+
+
+
 
 ?>
 
@@ -177,13 +181,23 @@ if(isset($_POST['email'])) {
                       <input type="text" name="numTel" class="form-control" id="number" placeholder="name@example.com">
                       <label for="phoneNumber">Número De Celular</label>
                     </div>
+
+                    <!-- <label for="data_nascimento">Data de Nascimento:</label>
+		                <input type="date" name="data_nascimento" id="data_nascimento" required>
+
+
+
       
                     <hr>
-      
+       -->
                     <div class="form-floating mb-3">
-                      <input type="date" name="dataNasc" class="form-control" id="month" placeholder="Password">
+                      <input type="date" name="data_nascimento" class="form-control" id="month" placeholder="Password">
                       <label for="month">Nascimento</label>
                     </div>
+
+                    <!-- <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" name="data_nascimento" id="data_nascimento" required>
+                    <br><br> -->
 
                   
       
