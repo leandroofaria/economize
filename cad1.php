@@ -1,79 +1,79 @@
 <?php
+//
+//if(isset($_POST['email'])) {
+//  include('conexao.php');
 
-if(isset($_POST['email'])) {
-  include('conexao.php');
-
-  $email = $_POST['email'];
-  $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-  $nome = $_POST['nome'];
-  $cpf = $_POST['cpf'];
-  $numTel = $_POST['numTel'];
-  $senhaConf = $_POST['senha_conf'];
-  $data_nascimento = $_POST["data_nascimento"];
+//  $email = $_POST['email'];
+//  $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+// $nome = $_POST['nome'];
+//  $cpf = $_POST['cpf'];
+//  $numTel = $_POST['numTel'];
+//  $senhaConf = $_POST['senha_conf'];
+//  $data_nascimento = $_POST["data_nascimento"];
   
 
   // Validando a senha (mínimo 8 caracteres, pelo menos uma letra e um número)
-  $senha_regex = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
+//  $senha_regex = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
 
   // Validando o nome (somente letras, mínimo 3 caracteres)
-  $nome_regex = "/^[a-zA-Z]+(\s[a-zA-Z]+)+$/";
+//  $nome_regex = "/^[a-zA-Z]+(\s[a-zA-Z]+)+$/";
 
   // Validando o número de telefone (formato XXXXXXXXXXX)
-  $numTel_regex = "/^[0-9]{11}$/";
+//  $numTel_regex = "/^[0-9]{11}$/";
 
   // Validando o CPF (formato XXXXXXXXXXX)
-  $cpf_regex = "/^[0-9]{11}$/";
+//  $cpf_regex = "/^[0-9]{11}$/";
 
   // validação para pessoas nascidas após 1900:
-  $data_nascimento_regex = "/^(19[0-9][0-9]|20[0-2][0-9])-([0][1-9]|[1][0-2])-([0][1-9]|[1-2][0-9]|[3][0-1])$/";
+//  $data_nascimento_regex = "/^(19[0-9][0-9]|20[0-2][0-9])-([0][1-9]|[1][0-2])-([0][1-9]|[1-2][0-9]|[3][0-1])$/";
 
 
 
 
-  if (strlen($_POST['nome']) == 0){
-    echo 'Preencha seu nome';
+//  if (strlen($_POST['nome']) == 0){
+//    echo 'Preencha seu nome';
 
-  } else if (strlen($_POST['email']) == 0) {
-      echo 'Preencha seu email'; 
+//  } else if (strlen($_POST['email']) == 0) {
+//      echo 'Preencha seu email'; 
 
-  } else if (strlen($_POST['senha']) == 0){
-      echo 'Preencha sua senha';
+//  } else if (strlen($_POST['senha']) == 0){
+//     echo 'Preencha sua senha';
 
-  } else if (strlen($_POST['cpf']) == 0){
-    echo 'Preencha o campo cpf';
+//  } else if (strlen($_POST['cpf']) == 0){
+//    echo 'Preencha o campo cpf';
 
-  }else if (strlen($_POST['numTel']) == 0){
-    echo 'Preencha o número de telefone';
+//  }else if (strlen($_POST['numTel']) == 0){
+//    echo 'Preencha o número de telefone';
 
-  }else if (strlen($_POST['data_nascimento']) == 0){
-    echo 'Preencha a sua data de nascimento';
+//  }else if (strlen($_POST['data_nascimento']) == 0){
+//    echo 'Preencha a sua data de nascimento';
 
-  } else if (!preg_match($senha_regex, $_POST['senha'])){
-    echo "Senha inválida! A senha deve conter pelo menos 8 caracteres, pelo menos uma letra e um número.";
+//  } else if (!preg_match($senha_regex, $_POST['senha'])){
+//    echo "Senha inválida! A senha deve conter pelo menos 8 caracteres, pelo menos uma letra e um número.";
 
-  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    echo "Email inválido!!"; // um email normal
-  } else if(!preg_match($nome_regex, $_POST['nome'])){
-    echo "Nome inválido! O nome deve conter apenas letras e pelo menos 3 caracteres.";
+//  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+//    echo "Email inválido!!"; // um email normal
+//  } else if(!preg_match($nome_regex, $_POST['nome'])){
+//    echo "Nome inválido! O nome deve conter apenas letras e pelo menos 3 caracteres.";
 
-  } else if (!preg_match($cpf_regex, $_POST['cpf'])){
-    echo "CPF inválido! O CPF deve estar no formato XXX.XXX.XXX-XX.";
+//  } else if (!preg_match($cpf_regex, $_POST['cpf'])){
+//    echo "CPF inválido! O CPF deve estar no formato XXX.XXX.XXX-XX.";
 
-  } else if (!preg_match($numTel_regex, $_POST['numTel'])){
-    echo "Número de telefone inválido! O número deve estar no formato (XX) XXXX-XXXX.";
+//  } else if (!preg_match($numTel_regex, $_POST['numTel'])){
+//    echo "Número de telefone inválido! O número deve estar no formato (XX) XXXX-XXXX.";
     
-  } else if(!preg_match($data_nascimento_regex, $_POST['data_nascimento'])){
-    echo "Data de nascimento invalida! tente novamente!";
+//  } else if(!preg_match($data_nascimento_regex, $_POST['data_nascimento'])){
+//    echo "Data de nascimento invalida! tente novamente!";
   
-  } else if ($_POST['senha'] !== $_POST['senha_conf']) {
-    echo "As senhas são diferentes!";
-  } else {
-    $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
-    header('location: home_user.php');
-  }
+// } else if ($_POST['senha'] !== $_POST['senha_conf']) {
+//    echo "As senhas são diferentes!";
+//  } else {
+//    $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
+//    header('location: home_user.php');
+//  }
     
 
-}
+//}
 
 
 
@@ -169,7 +169,7 @@ if(isset($_POST['email'])) {
                     </div>
       
                     <div class="form-floating mb-3">
-                      <input type="password" name="senha_conf" class="form-control" id="#_confirmePassword"  placeholder="Confirm Password"  >
+                      <input type="password" name="senha_conf" class="form-control" id="_confirmePassword"  placeholder="Confirm Password"  >
                       <label for="floatingPasswordConfirm">Confirme a Senha</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -181,10 +181,10 @@ if(isset($_POST['email'])) {
                       <input type="text" name="numTel" class="form-control" id="number" placeholder="name@example.com">
                       <label for="phoneNumber">Número De Celular</label>
                     </div>
-
-                    <!-- <label for="data_nascimento">Data de Nascimento:</label>
-		                <input type="date" name="data_nascimento" id="data_nascimento" required>
-
+                    <div class="form-floating mb-3">
+                      <label for="data_nascimento">Data de Nascimento:</label>
+		                  <input type="date" name="data_nascimento" id="data_nascimento" required>
+                    </div>
 
 
       
@@ -245,7 +245,7 @@ if(isset($_POST['email'])) {
 
 
   <!-- Bootstrap JavaScript Libraries -->
-  <script src=""></script>
+  <script src="/learn2work/tela_cadastro/cad01.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
