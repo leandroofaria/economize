@@ -41,23 +41,23 @@ include('UserData.php');
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_inicial.php'">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_inicial.php'">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_inicial.php'">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_inicial.php'">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Sobre nós</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'edit.php'">EDITAR</a>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'select_edit.php'">EDITAR</a>
                   </form>
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_user.php'">HOME</a>
@@ -99,6 +99,7 @@ include('UserData.php');
                         <div class="col-sm-9 text-secondary">
                         <?php echo $user_data['nome']; ?> <!--COLOCAR NOME CADASTARDO NO BANCO DE DADOS AQUI--->
                         </div>
+                      
                       </div>
                       <hr>
                       <div class="row">
@@ -124,7 +125,25 @@ include('UserData.php');
                           <h6 class="mb-0">Senha</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <?php echo $user_data['senha']; ?>
+                        ..............
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Data de nascimento</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                        <?php echo $user_data['data_nascimento']; ?>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">CPF</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                        <?php echo $user_data['cpf']; ?>
                         </div>
                       </div>
                       <hr>
@@ -140,10 +159,10 @@ include('UserData.php');
   <div class="container" style="color: whitesmoke;">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Home</a></li>
-        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Catálogo</a></li>
-        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Planos</a></li>
-        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Sobre Nós</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Home</a></li>
+        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a></li>
+        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Planos</a></li>
+        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Sobre Nós</a></li>
       </ul>
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>

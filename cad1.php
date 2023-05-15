@@ -1,16 +1,19 @@
 <?php
-//
-//if(isset($_POST['email'])) {
-//  include('conexao.php');
 
-//  $email = $_POST['email'];
-//  $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-// $nome = $_POST['nome'];
-//  $cpf = $_POST['cpf'];
-//  $numTel = $_POST['numTel'];
-//  $senhaConf = $_POST['senha_conf'];
-//  $data_nascimento = $_POST["data_nascimento"];
-  
+if(isset($_POST['email'])) {
+ include('conexao.php');
+
+ $email = $_POST['email'];
+ $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+ $nome = $_POST['nome'];
+ $cpf = $_POST['cpf'];
+ $numTel = $_POST['numTel'];
+ $senhaConf = $_POST['senha_conf'];
+ $data_nascimento = $_POST["data_nascimento"];
+
+ $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
+ header('location: home_user.php');
+
 
   // Validando a senha (mínimo 8 caracteres, pelo menos uma letra e um número)
 //  $senha_regex = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
@@ -73,7 +76,7 @@
 //  }
     
 
-//}
+}
 
 
 
@@ -181,15 +184,7 @@
                       <input type="text" name="numTel" class="form-control" id="number" placeholder="name@example.com">
                       <label for="phoneNumber">Número De Celular</label>
                     </div>
-                    <div class="form-floating mb-3">
-                      <label for="data_nascimento">Data de Nascimento:</label>
-		                  <input type="date" name="data_nascimento" id="data_nascimento" required>
-                    </div>
-
-
       
-                    <hr>
-       -->
                     <div class="form-floating mb-3">
                       <input type="date" name="data_nascimento" class="form-control" id="month" placeholder="Password">
                       <label for="month">Nascimento</label>
@@ -207,7 +202,7 @@
       
                     <a class="d-block text-center mt-2 small" href="login.php">Já possui uma conta? Entre!</a>
       
-                    <hr class="my-4">
+                    <!-- <hr class="my-4">
       
                     <div class="d-grid mb-2">
                       <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
@@ -218,7 +213,7 @@
                     <div class="d-grid">
                       <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
                         <i class="fab fa-facebook-f me-2"></i> Entrar com o Facebook
-                      </button>
+                      </button> -->
                     </div>
                   </form>
                 </div>
