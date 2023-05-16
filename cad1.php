@@ -152,7 +152,7 @@ if(isset($_POST['email'])) {
                 </div>
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro</h5>
-                  <form action="" method="POST" id="form">
+                  <form action="" method="POST" id="form" onsubmit="return validaFormulario(event)">
 
                     <div class="form-floating mb-3">
                       <input type="text" name="nome" class="form-control" id="nome" placeholder="myusername">

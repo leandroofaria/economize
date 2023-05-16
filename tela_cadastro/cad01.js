@@ -10,44 +10,58 @@ const CPF = document.querySelector('#cpf');
 const numero = document.querySelector('#number');
 const mes = document.querySelector('#month');
 
+// form.addEventListener('submit', function(event){
+    // event.preventDefault();
 
-form.addEventListener("submit", (e) =>{
-    e.preventDefault();
-    //valida nome (beta)
+    
+function validaFormulario(event){
+
+
+    //valida nome (beta)    
     if(nome.value === "" || !isNomeValido(nome.value)){
         alert("O nome deve possuir no minimo 3 letras não podendo conter somante numeros");
+        event.preventDefault();
         return;
     }
     //valida email(beta)
     if(email.value === "" || !isEmailValido(email.value)){
         alert("Insira um email válido!");
+        event.preventDefault();
         return;
     }
     //verifica a senha(beta)
     if(senha.value === "" || !validaPassword(senha.value)){
         alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
+        event.preventDefault();
         return;
     }
 
     //confirma a senha(beta)
     if(Confpassword.value === "" || confirmaPassword(Confpassword.value) != validaPassword(password.value)){
         alert("As senhas não são iguais");
+        event.preventDefault();
         return;
     }
     else if (!validaPassword(senha.value)) {
         alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
+        event.preventDefault();
         return;
     } 
     if(CPF.value === '' || !validaCPF(CPF.value)){
         alert("Insira o CPF corretamente, por favor")
+        event.preventDefault();
         return;
     }
     if(numero.value === '' || !validaNumero(numero.value)){
-        alert(numero, "Insira o numero corretamente")
+        alert("Insira o numero corretamente")
+        event.preventDefault();
         return;
     }
-});
-
+    else{
+        return true;
+    }
+};
+   
 function isNomeValido(nome){
     const nomeRegex = new RegExp(
         //o nome tem que ter mais de 3 caracteres e não pode conter somente numeros
