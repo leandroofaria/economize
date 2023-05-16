@@ -1,5 +1,5 @@
-console.log("Oi");
-alert('oieee111');
+console.log("Learn2Work...");
+
 
 const form = document.querySelector('#form');
 const nome = document.querySelector('#nome');
@@ -19,7 +19,7 @@ function validaFormulario(event){
 
     //valida nome (beta)    
     if(nome.value === "" || !isNomeValido(nome.value)){
-        alert("O nome deve possuir no minimo 3 letras não podendo conter somante numeros");
+        alert("Digite seu nome completo!");
         event.preventDefault();
         return;
     }
@@ -31,7 +31,7 @@ function validaFormulario(event){
     }
     //verifica a senha(beta)
     if(senha.value === "" || !validaPassword(senha.value)){
-        alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
+        alert("A senha de conter no mínimo 8 caracteres, pelo menos uma letra e um número");
         event.preventDefault();
         return;
     }
@@ -48,12 +48,17 @@ function validaFormulario(event){
         return;
     } 
     if(CPF.value === '' || !validaCPF(CPF.value)){
-        alert("Insira o CPF corretamente, por favor")
+        alert("Insira o CPF corretamente, por favor (XXXXXXXXXXX)")
         event.preventDefault();
         return;
     }
     if(numero.value === '' || !validaNumero(numero.value)){
-        alert("Insira o numero corretamente")
+        alert("Insira o numero corretamente (XXXXXXXXXXX)")
+        event.preventDefault();
+        return;
+    }
+    if(mes.value === '' || validaData(mes.value) == false){
+        alert("Insira uma data válida.")
         event.preventDefault();
         return;
     }
@@ -65,7 +70,8 @@ function validaFormulario(event){
 function isNomeValido(nome){
     const nomeRegex = new RegExp(
         //o nome tem que ter mais de 3 caracteres e não pode conter somente numeros
-        /^[a-zA-Z]{3,}$/
+        /^[a-zA-Z]+(\s[a-zA-Z]+)+$/ 
+
     );
     if(nomeRegex.test(nome)){
         return true;
@@ -90,7 +96,7 @@ function isEmailValido(email){
 //Funcao valida senha(não é a confirmação)
 function validaPassword(senha){
     const senhaRegex = new RegExp(
-        /^(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z$*&@#]{5,}$/
+        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
     );
     if (senhaRegex.test(senha)){
         return true;
@@ -133,3 +139,28 @@ function validaNumero(numero){
         return false;
     }
 }
+
+
+function validaData(mes) {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth(); // Os meses são indexados de 0 a 11
+    const currentDay = currentDate.getDate();
+  
+    const maxDate = new Date(currentYear, currentMonth, currentDay);
+  
+    const dataRegex = new RegExp('^(19\\d{2}|20\\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$');
+
+
+  
+    if (dataRegex.test(mes) ) {
+      const data = new Date(mes);
+      if (data <= maxDate) {
+        return true;
+      }
+    }
+  
+    return false;
+  }
+  
+  
