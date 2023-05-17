@@ -31,7 +31,7 @@ function validaFormulario(event){
     }
     //verifica a senha(beta)
     if(senha.value === "" || !validaPassword(senha.value)){
-        alert("A senha de conter no mínimo 8 caracteres, pelo menos uma letra e um número");
+        alert("A senha de conter no mínimo 8 caracteres, pelo menos uma letra maiúscula e um número");
         event.preventDefault();
         return;
     }
@@ -43,7 +43,7 @@ function validaFormulario(event){
         return;
     }
     else if (!validaPassword(senha.value)) {
-        alert("A senha precisa de 5 caracteres, sendo um numero e um caracter maiusculo");
+        alert("A senha de conter no mínimo 8 caracteres, pelo menos uma letra maiúscula e um número");
         event.preventDefault();
         return;
     } 
@@ -58,18 +58,18 @@ function validaFormulario(event){
         return;
     }
     if(mes.value === '' || validaData(mes.value) == false){
-        alert("Insira uma data válida.")
+        alert("Insira uma data válida. Apenas usuários maiores de 16 anos tem permissão para utilizar a plataforma!")
         event.preventDefault();
         return;
     }
     else{
+        alert('Usuário cadastrado com sucesso!')
         return true;
     }
 };
    
 function isNomeValido(nome){
     const nomeRegex = new RegExp(
-        //o nome tem que ter mais de 3 caracteres e não pode conter somente numeros
         /^[a-zA-Z]+(\s[a-zA-Z]+)+$/ 
 
     );
@@ -143,8 +143,8 @@ function validaNumero(numero){
 
 function validaData(mes) {
     const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth(); // Os meses são indexados de 0 a 11
+    const currentYear = currentDate.getFullYear() - 16;
+    const currentMonth = currentDate.getMonth(); 
     const currentDay = currentDate.getDate();
   
     const maxDate = new Date(currentYear, currentMonth, currentDay);

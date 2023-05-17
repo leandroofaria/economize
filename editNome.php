@@ -12,22 +12,24 @@ if(isset($_POST['nome'])) {
 
 
   // Validando o nome (somente letras, mínimo 3 caracteres)
-$nome_regex = "/^[a-zA-Z]+(\s[a-zA-Z]+)+$/";
+// $nome_regex = "/^[a-zA-Z]+(\s[a-zA-Z]+)+$/";
 
 
 
 
- if (strlen($_POST['nome']) == 0){
-   echo 'Preencha seu nome';
+//  if (strlen($_POST['nome']) == 0){
+//    echo 'Preencha seu nome';
 
- } else if(!preg_match($nome_regex, $_POST['nome'])){
-   echo "Nome inválido! O nome deve conter apenas letras e pelo menos 3 caracteres.";
+//  } else if(!preg_match($nome_regex, $_POST['nome'])){
+//    echo "Nome inválido! O nome deve conter apenas letras e pelo menos 3 caracteres.";
 
- } else {
-    $mysqli->query("UPDATE usuarios SET nome='$nome' WHERE id = $user_id");
-    header('Location: perfil.php');
- }
+//  } else {
+//     $mysqli->query("UPDATE usuarios SET nome='$nome' WHERE id = $user_id");
+//     header('Location: perfil.php');
+//  }
     
+$mysqli->query("UPDATE usuarios SET nome='$nome' WHERE id = $user_id");
+header('Location: perfil.php');
 
 }
 
@@ -91,7 +93,7 @@ $nome_regex = "/^[a-zA-Z]+(\s[a-zA-Z]+)+$/";
                 </div>
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">EDITAR DADOS</h5>
-                  <form action="" method="POST" id="form">
+                  <form action="" method="POST" id="form" onsubmit="return validaFormulario(event)">
 
                     <div class="form-floating mb-3">
                       <input type="text" name="nome" class="form-control" id="nome" placeholder="myusername">
@@ -126,7 +128,7 @@ $nome_regex = "/^[a-zA-Z]+(\s[a-zA-Z]+)+$/";
 
 
   <!-- Bootstrap JavaScript Libraries -->
-  <script src=""></script>
+  <script src="/learn2work/tela_cadastro/cad01.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
