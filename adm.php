@@ -1,10 +1,10 @@
 <?php
 include('conexao.php');
 
+// Aqui ela está retornando as linhas da tabela usuário(Cada linha é um user cadastrado!)
 // Consulta SQL para contar registros na tabela
 $sql = "SELECT COUNT(*) as total FROM usuarios";
 $result = $mysqli->query($sql);
-
 // Verifica se a consulta retornou resultados
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -12,6 +12,8 @@ if ($result->num_rows > 0) {
 } else {
     $totalPessoas = 0;
 }
+
+
 ?>
 
 <!doctype html>
