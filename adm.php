@@ -1,3 +1,19 @@
+<?php
+include('conexao.php');
+
+// Consulta SQL para contar registros na tabela
+$sql = "SELECT COUNT(*) as total FROM usuarios";
+$result = $mysqli->query($sql);
+
+// Verifica se a consulta retornou resultados
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $totalPessoas = $row["total"];
+} else {
+    $totalPessoas = 0;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -56,7 +72,7 @@
                     <div class="card border-white mx-sm-1 p-3" id="caixa">
                         <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-user" style="color: #bb7ae6" aria-hidden="true"></span></div>
                         <div class="text-white text-center mt-3"><h4>Usuários</h4></div>
-                        <div class="text-white text-center mt-2"><h1>876</h1></div>
+                        <div class="text-white text-center mt-2"><h1><?php echo $totalPessoas; ?></h1></div>
                     </div>
                 </div>
                 <div class="col-md-3">
