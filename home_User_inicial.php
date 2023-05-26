@@ -2,7 +2,6 @@
 
 include('protect.php');
 include('UserData.php');
-
 ?>
 
 <!doctype html>
