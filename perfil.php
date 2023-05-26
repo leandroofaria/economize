@@ -2,7 +2,12 @@
 
 include('protect.php');
 include('UserData.php');
+include('conexao.php');
+
+
 ?>
+
+
 
 
 <!doctype html>
@@ -77,7 +82,7 @@ include('UserData.php');
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <h4><?php echo $user_data['nome']; ?></h4>
                           <div class="input-group">
