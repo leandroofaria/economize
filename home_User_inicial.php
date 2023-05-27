@@ -1,3 +1,9 @@
+<?php
+
+include('protect.php');
+include('UserData.php');
+?>
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -46,12 +52,18 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#local-about" id="text-header">Sobre nós</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
+                  </li>
                 </ul>
+                <li class="d-flex" id="text-header" >
+                    <a>Bem-vindo <?php echo $user_data['nome'];  ?>!</a>
+                  </li>
                 <form class="d-flex" id="button">
-                  <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'cad1.php'">Cadastrar</a>
-                </form>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_user.php'">HOME</a>
+                  </form>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'login.php'">Entrar</a>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'perfil.php'">Meu Perfil</a>
                   </form>
               </div>
             </div>

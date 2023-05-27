@@ -1,6 +1,7 @@
 <?php
 
 include('protect.php');
+include('UserData.php');
 
 ?>
 
@@ -23,9 +24,9 @@ include('protect.php');
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./tela_home_user/css/reset.css">
-    <link rel="stylesheet" href="./tela_home_user/css/header.css">
-    <link rel="stylesheet" href="./tela_home_user/css/main.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_user/css/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_user/css/header.css">
+    <link rel="stylesheet" href="/learn2work/tela_home_user/css/main.css">
 
 </head>
 
@@ -41,21 +42,24 @@ include('protect.php');
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_inicial.php'">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_inicial.php'">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_inicial.php'">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_inicial.php'">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Sobre nós</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
                   </li>
                 </ul>
+                <li class="d-flex" id="text-header" >
+                    <a>Bem-vindo <?php echo $user_data['nome'];  ?>!</a>
+                  </li>
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'perfil.php'">Meu Perfil</a>
                   </form>
@@ -75,7 +79,7 @@ include('protect.php');
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="color: black;">
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/comunicacao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Comunicação No Trabalho</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -90,7 +94,7 @@ include('protect.php');
 
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/administracao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/administracao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Administração Do Tempo.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -104,7 +108,7 @@ include('protect.php');
             </div>
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/postura.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/postura.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Postura Social E No Trabalho</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -119,7 +123,7 @@ include('protect.php');
     
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/matematica.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/matematica.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Matemática Financeira</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -133,7 +137,7 @@ include('protect.php');
             </div>
             <div class="col">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/inovacao.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/inovacao.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Inovação Empresarial</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -147,7 +151,7 @@ include('protect.php');
             </div>
             <div class="col" style="border: 5rem black;">
               <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/L2W/img/atendimento.jpg" alt="">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/atendimento.jpg" alt="">
                 <div class="card-body">
                   <p class="card-text">Atendimento Ao Cliente</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -168,10 +172,10 @@ include('protect.php');
   <div class="container" style="color: whitesmoke;">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Home</a></li>
-        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Catálogo</a></li>
-        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Planos</a></li>
-        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Sobre Nós</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Home</a></li>
+        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a></li>
+        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Planos</a></li>
+        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Sobre Nós</a></li>
       </ul>
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>

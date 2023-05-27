@@ -28,6 +28,8 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['nome'] = $usuario['nome'];
 
+        
+
         header("Location: home_user.php");
 
       } else{
@@ -58,9 +60,9 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/L2W/tela_login/css/reset.css">
-    <link rel="stylesheet" href="/L2W/tela_login/css/main.css">
-    <link rel="stylesheet" href="/L2W/tela_login/css/header.css">
+    <link rel="stylesheet" href="/learn2work/tela_login/css/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_login/css/main.css">
+    <link rel="stylesheet" href="/learn2work/tela_login/css/header.css">
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
