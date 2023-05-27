@@ -1,3 +1,10 @@
+<?php
+
+include('protect.php');
+
+?>
+
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -17,8 +24,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/tela_home_user/tela_perfil/css/reset.css">
-    <link rel="stylesheet" href="/tela_home_user/tela_perfil/css/header.css">
+    <link rel="stylesheet" href="/L2W/tela_perfil/reset.css">
+    <link rel="stylesheet" href="/L2W/tela_perfil/header.css">
 
 </head>
 
@@ -34,20 +41,20 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_inicial.php'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_inicial.php'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_inicial.php'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_inicial.php'">Sobre nós</a>
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn">Meu Perfil</a>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_user.php'">HOME</a>
                   </form>
               </div>
             </div>
@@ -120,6 +127,10 @@
                         <div class="col-sm-9 text-secondary">
                           >Nome<
                         </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                          <button type="button" class="btn btn-outline-secondary">Salvar</button>
+                        </div>
                       </div>
                       <hr>
                       <div class="row">
@@ -128,6 +139,10 @@
                         </div>
                         <div class="col-sm-9 text-secondary">
                           >Email<
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                          <button type="button" class="btn btn-outline-secondary">Salvar</button>
                         </div>
                       </div>
                       <hr>
@@ -138,6 +153,10 @@
                         <div class="col-sm-9 text-secondary">
                           >Celular<
                         </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                          <button type="button" class="btn btn-outline-secondary">Salvar</button>
+                        </div>
                       </div>
                       <hr>
                       <hr>
@@ -147,6 +166,10 @@
                         </div>
                         <div class="col-sm-9 text-secondary">
                           >Endereço< 
+                        </div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                          <button type="button" class="btn btn-outline-secondary">Salvar</button>
                         </div>
                       </div>
                       <hr>
@@ -203,10 +226,10 @@
   <div class="container" style="color: whitesmoke;">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a></li>
-        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a></li>
-        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a></li>
-        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre Nós</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Home</a></li>
+        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Catálogo</a></li>
+        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Planos</a></li>
+        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Sobre Nós</a></li>
       </ul>
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>
