@@ -3,6 +3,22 @@
 include('protect.php');
 include('UserData.php');
 
+
+// Obtém o ID do usuário da sessão (ou de outra fonte)
+$tituloVideo = $_SESSION['id'];
+
+// Executa uma consulta SQL para obter os dados do usuário
+$sql = "SELECT nome, email, numTel, cpf, senha, data_nascimento FROM usuarios WHERE id = $user_id";
+$result = $mysqli->query($sql);
+
+// Verifica se há resultados
+if ($result->num_rows > 0) {
+  // Obtém os dados do usuário e os armazena em uma variável
+  $user_data = $result->fetch_assoc();
+} else {
+  echo "User not found.";
+}
+
 ?>
 
 <!doctype html>
@@ -81,10 +97,19 @@ include('UserData.php');
               <div class="card shadow-sm" id="custom-video-card">
                 <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
                 <div class="card-body">
-                  <p class="card-text">Comunicação No Trabalho</p>
+                  <p class="card-text">teste do video</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-light">Assistir</button>
+                      <button id='playButton' type="button" class="btn btn-sm btn-outline-light">Assistir</button>
+                      
+                      <script>
+                        var playButton = document.getElementById('playButton');
+                        
+                        playButton.addEventListener('click', function() {
+                          var videoURL = 'learn2work/video/video_6473c5601fcd1.mp4'; // Substitua pelo caminho do seu vídeo
+                          window.open(videoURL, '_blank');
+                        });
+                      </script>
                     </div>
                     <small class="text-body-secondary">12 mins</small>
                   </div>

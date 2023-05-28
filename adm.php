@@ -13,6 +13,16 @@ if ($result->num_rows > 0) {
     $totalPessoas = 0;
 }
 
+$sql = "SELECT COUNT(*) as total FROM video";
+$result = $mysqli->query($sql);
+// Verifica se a consulta retornou resultados
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $totalvideo = $row["total"];
+} else {
+    $totalvideo = 0;
+}
+
 
 ?>
 
@@ -63,6 +73,10 @@ if ($result->num_rows > 0) {
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn">Meu Perfil</a>
                   </form>
+                  <form class="d-flex" id="button">
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'addvideo.php'">Postar vídeo</a>
+                  </form>
+
               </div>
             </div>
           </nav>
@@ -77,18 +91,12 @@ if ($result->num_rows > 0) {
                         <div class="text-white text-center mt-2"><h1><?php echo $totalPessoas; ?></h1></div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card border-light mx-sm-1 p-3" id="caixa">
-                        <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-pencil" style="color: #bb7ae6" aria-hidden="true"></span></div>
-                        <div class="text-white text-center mt-3"><h4>Professores</h4></div>
-                        <div class="text-white text-center mt-2"><h1>33</h1></div>
-                    </div>
-                </div>
+  
                 <div class="col-md-3">
                     <div class="card border-white mx-sm-1 p-3" id="caixa">
                         <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-eye" style="color: #bb7ae6" aria-hidden="true"></span></div>
                         <div class="text-white text-center mt-3"><h4>Vídeos</h4></div>
-                        <div class="text-white text-center mt-2"><h1>578</h1></div>
+                        <div class="text-white text-center mt-2"><h1><?php echo $totalvideo; ?></h1></div>
                     </div>
                 </div>
                 <div class="col-md-3">

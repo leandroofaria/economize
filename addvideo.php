@@ -9,9 +9,9 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   
       <!-- CSS -->
-      <link rel="stylesheet" href="/L2W/tela_cadastro/reset.css">
-      <link rel="stylesheet" href="/L2W/tela_cadastro/main.css">
-      <link rel="stylesheet" href="/L2W/tela_cadastro/header.css">
+      <link rel="stylesheet" href="/learn2work/tela_cadastro/reset.css">
+      <link rel="stylesheet" href="/learn2work/tela_cadastro/main.css">
+      <link rel="stylesheet" href="/learn2work/tela_cadastro/header.css">
   
           <!-- FONTS -->
           <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,16 +61,21 @@
                   </div>
                   <div class="card-body p-4 p-sm-5">
                     <h5 class="card-title text-center mb-5 fw-light fs-5">Adicionar vídeo</h5>
-                    <form act ion="" method="POST" id="form">
+                    <form action="upload.php" method="POST" id="form" enctype="multipart/form-data">
   
                       <div class="form-floating mb-3">
-                        <input type="text" name="nome" class="form-control" id="nome" placeholder="myusername">
+                        <input type="text" name="titulo" class="form-control" id="nome" placeholder="myusername">
                         <label for="floatingInputUsername">Título</label>
+                      </div>
+
+                      <div class="form-floating mb-3">
+                        <input type="text" name="descricao" class="form-control" id="nome" placeholder="myusername">
+                        <label for="floatingInputUsername">Descrição</label>
                       </div>
                       
                       <div>
                         <label for="formFileLg" class="form-label">Adicione o vídeo aqui</label>
-                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                        <input class="form-control form-control-lg" name="video" accept="video/*" id="formFileLg" type="file">
                       </div>
                       <hr>
                       <div class="d-grid mb-2">
