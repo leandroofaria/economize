@@ -140,20 +140,23 @@ if(isset($_POST['cpf'])) {
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_inicial.php'">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_inicial.php'">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_inicial.php'">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_inicial.php'">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Sobre nós</a>
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_user.php'">HOME</a>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_User_inicial.php'">HOME</a>
+                  </form>
+                  <form class="d-flex" id="button">
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'perfil.php'">Meu Perfil</a>
                   </form>
               </div>
             </div>
@@ -276,15 +279,26 @@ if(isset($_POST['cpf'])) {
                         </div>
                         <div class="input-group">
                           <input type="date" name="data_nascimento" class="form-control" id="month" placeholder ="<?php echo $user_data['data_nascimento']; ?>">
-                          <button type="submit" class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
+                          <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                         </div>
                       </div>
+                      </form>
+                      <hr>
+                      <form action="" method="POST" id="form">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Cancelar conta</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                        </div>
+                        <div class="input-group">
+                        <a href="delete.php" type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Confirmar</a>
+                          </div>
+                      </div>
+                      </form>
                     </div>
+                    <div>
                   </div>
-                </form>
-    
-    
-                </div>
               </div>
     
             </div>
@@ -294,10 +308,10 @@ if(isset($_POST['cpf'])) {
   <div class="container" style="color: whitesmoke;">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Home</a></li>
-        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Catálogo</a></li>
-        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Planos</a></li>
-        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Sobre Nós</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Home</a></li>
+        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a></li>
+        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Planos</a></li>
+        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_User_inicial.php'">Sobre Nós</a></li>
       </ul>
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>
