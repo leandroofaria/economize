@@ -15,13 +15,6 @@ if(isset($_POST['numTel'])) {
 
  $user_id = $_SESSION['id'];
 
-
-
-
-
-
-
-
  if (strlen($_POST['numTel']) == 0){
   echo 'Preencha com seu telefone';
    
