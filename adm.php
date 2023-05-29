@@ -74,7 +74,7 @@ if ($result->num_rows > 0) {
                     <a href="#" class="btn btn-light" id="custom-btn">Meu Perfil</a>
                   </form>
                   <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'addvideo.php'">Postar vídeo</a>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'addvideo.php'">Cadastrar vídeo</a>
                   </form>
 
               </div>

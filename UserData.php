@@ -5,7 +5,7 @@ require 'conexao.php';
 $user_id = $_SESSION['id'];
 
 // Executa uma consulta SQL para obter os dados do usuário
-$sql = "SELECT nome, email, numTel, cpf, senha, data_nascimento FROM usuarios WHERE id = $user_id";
+$sql = "SELECT nome, email, numTel, cpf, senha, data_nascimento, foto_perfil FROM usuarios WHERE id = $user_id";
 $result = $mysqli->query($sql);
 
 // Verifica se há resultados
@@ -15,6 +15,17 @@ if ($result->num_rows > 0) {
 } else {
   echo "User not found.";
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+$stmt = $mysqli->prepare("SELECT foto_perfil FROM usuarios WHERE id = ?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$stmt->bind_result($foto_perfil);
+$stmt->fetch();
+$stmt->close();
+/////////////////////////////////////////////////////////////////////////////////////////
 
 ///
 

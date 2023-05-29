@@ -4,12 +4,28 @@ include('protect.php');
 include('UserData.php');
 include('conexao.php');
 
+
+if(isset($_FILES['foto_perfil'])) {
+  $foto_temp = $_FILES['foto_perfil']['tmp_name'];
+  $foto_content = file_get_contents($foto_temp);
+
+  
+
+  $stmt = $mysqli->prepare("UPDATE usuarios SET foto_perfil = ? WHERE id = ?");
+  $stmt->bind_param("si", $foto_content, $user_id);
+  $stmt->execute();
+  $stmt->close();
+
+  header('Location: editPerfil.php');
+}
+
+
 if(isset($_POST['email'])) {
     include('conexao.php');
    
     $email = $_POST['email'];
    
-    $user_id = $_SESSION['id'];
+    
 
     
     $mysqli->query("UPDATE usuarios SET email='$email' WHERE id = $user_id");
@@ -22,7 +38,6 @@ if(isset($_POST['nome'])) {
    
     $nome = $_POST['nome'];
    
-    $user_id = $_SESSION['id'];
 
     
    $mysqli->query("UPDATE usuarios SET nome='$nome' WHERE id = $user_id");
@@ -35,7 +50,6 @@ if(isset($_POST['numTel'])) {
    
     $numTel = $_POST["numTel"];
    
-    $user_id = $_SESSION['id'];
 
     $mysqli->query("UPDATE usuarios SET numTel='$numTel' WHERE id = $user_id");
     header('Location: perfil.php');
@@ -50,7 +64,6 @@ if(isset($_POST['senha'])) {
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
     $senhaConf = $_POST['senha_conf'];
    
-    $user_id = $_SESSION['id'];
 
    $senha_regex = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
 
@@ -76,7 +89,6 @@ if(isset($_POST['cpf'])) {
    
     $cpf = $_POST['cpf'];
    
-    $user_id = $_SESSION['id'];
    
     $mysqli->query("UPDATE usuarios SET cpf='$cpf' WHERE id = $user_id");
     header('Location: perfil.php');
@@ -90,7 +102,6 @@ if(isset($_POST['cpf'])) {
     $data_nascimento = $_POST["data_nascimento"];
    
    
-    $user_id = $_SESSION['id'];
    
 
     $mysqli->query("UPDATE usuarios SET data_nascimento='$data_nascimento' WHERE id = $user_id");
@@ -151,6 +162,9 @@ if(isset($_POST['cpf'])) {
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Sobre nós</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
+                  </li>
                 </ul>
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_User_inicial.php'">HOME</a>
@@ -167,22 +181,24 @@ if(isset($_POST['cpf'])) {
     <div class="container">
         <div class="main-body">
               <!-- /Breadcrumb -->
-        
+              <form action="" method="POST" id="form" enctype="multipart/form-data">
               <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($foto_perfil); ?>" alt="Admin" class="rounded-circle" width="150">
                         <div class="mb-3">
                           <label for="formFileSm" class="form-label">Mudar foto</label>
-                          <input class="form-control form-control-sm" id="formFileSm" type="file">
+                          <input name="foto_perfil" class="form-control form-control-sm" id="formFileSm" type="file">
+                          <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                         </div>
                           <h4><?php echo $user_data['nome']; ?></h4>
                       </div>
                     </div>
                   </div>
                 </div>
+               </form>
                 <div class="col-md-8">
                   <div class="card mb-3">
                     <div class="card-body">

@@ -106,7 +106,7 @@ if ($result->num_rows > 0) {
                         var playButton = document.getElementById('playButton');
                         
                         playButton.addEventListener('click', function() {
-                          var videoURL = 'learn2work/video/video_6473c5601fcd1.mp4'; // Substitua pelo caminho do seu vídeo
+                          var videoURL = 'Cursos/video/video_6474eb65d68fb.mp4'; // Substitua pelo caminho do seu vídeo
                           window.open(videoURL, '_blank');
                         });
                       </script>

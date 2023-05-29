@@ -1,7 +1,7 @@
 <?php
 include('conexao.php');
 // Define o diretório de destino para salvar o vídeo
-$diretorioDestino = "learn2work/video/";
+$diretorioDestino = "Cursos/video/";
 
 // Verifica se o diretório de destino já existe
 if (!is_dir($diretorioDestino)) {
