@@ -13,69 +13,6 @@ if(isset($_POST['email'])) {
 
  $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
  header('location: home_user.php');
-
-
-  // Validando a senha (mínimo 8 caracteres, pelo menos uma letra e um número)
-//  $senha_regex = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
-
-  // Validando o nome (somente letras, mínimo 3 caracteres)
-//  $nome_regex = "/^[a-zA-Z]+(\s[a-zA-Z]+)+$/";
-
-  // Validando o número de telefone (formato XXXXXXXXXXX)
-//  $numTel_regex = "/^[0-9]{11}$/";
-
-  // Validando o CPF (formato XXXXXXXXXXX)
-//  $cpf_regex = "/^[0-9]{11}$/";
-
-  // validação para pessoas nascidas após 1900:
-//  $data_nascimento_regex = "/^(19[0-9][0-9]|20[0-2][0-9])-([0][1-9]|[1][0-2])-([0][1-9]|[1-2][0-9]|[3][0-1])$/";
-
-
-
-
-//  if (strlen($_POST['nome']) == 0){
-//    echo 'Preencha seu nome';
-
-//  } else if (strlen($_POST['email']) == 0) {
-//      echo 'Preencha seu email'; 
-
-//  } else if (strlen($_POST['senha']) == 0){
-//     echo 'Preencha sua senha';
-
-//  } else if (strlen($_POST['cpf']) == 0){
-//    echo 'Preencha o campo cpf';
-
-//  }else if (strlen($_POST['numTel']) == 0){
-//    echo 'Preencha o número de telefone';
-
-//  }else if (strlen($_POST['data_nascimento']) == 0){
-//    echo 'Preencha a sua data de nascimento';
-
-//  } else if (!preg_match($senha_regex, $_POST['senha'])){
-//    echo "Senha inválida! A senha deve conter pelo menos 8 caracteres, pelo menos uma letra e um número.";
-
-//  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-//    echo "Email inválido!!"; // um email normal
-//  } else if(!preg_match($nome_regex, $_POST['nome'])){
-//    echo "Nome inválido! O nome deve conter apenas letras e pelo menos 3 caracteres.";
-
-//  } else if (!preg_match($cpf_regex, $_POST['cpf'])){
-//    echo "CPF inválido! O CPF deve estar no formato XXX.XXX.XXX-XX.";
-
-//  } else if (!preg_match($numTel_regex, $_POST['numTel'])){
-//    echo "Número de telefone inválido! O número deve estar no formato (XX) XXXX-XXXX.";
-    
-//  } else if(!preg_match($data_nascimento_regex, $_POST['data_nascimento'])){
-//    echo "Data de nascimento invalida! tente novamente!";
-  
-// } else if ($_POST['senha'] !== $_POST['senha_conf']) {
-//    echo "As senhas são diferentes!";
-//  } else {
-//    $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
-//    header('location: home_user.php');
-//  }
-    
-
 }
 
 

@@ -1,27 +1,38 @@
 <?php
 include('conexao.php');
 
-// Aqui ela está retornando as linhas da tabela usuário(Cada linha é um user cadastrado!)
-// Consulta SQL para contar registros na tabela
-$sql = "SELECT COUNT(*) as total FROM usuarios";
-$result = $mysqli->query($sql);
-// Verifica se a consulta retornou resultados
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $totalPessoas = $row["total"];
-} else {
-    $totalPessoas = 0;
+if ($mysqli->connect_errno) {
+    die("Falha ao conectar ao banco de dados: " . $mysqli->connect_error);
 }
 
-$sqlv = "SELECT COUNT(*) as total FROM video";
-$result = $mysqli->query($sqlv);
-// Verifica se a consulta retornou resultados
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $totalvideo = $row["total"];
-} else {
-    $totalvideo = 0;
+$query = "SELECT * FROM usuarios";
+
+$resultado = $mysqli->query($query);
+
+if (!$resultado) {
+    die("Erro ao executar a consulta: " . $mysqli->error);
 }
+
+echo "<table>";
+echo "<tr><th>ID</th><th>Nome</th><th>Email</th><th>Senha</th>";
+
+while ($row = $resultado->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $row['id'] . "</td>";
+    echo "<td>" . $row['nome'] . "</td>";
+    echo "<td>" . $row['email'] . "</td>";
+    echo "<td>" . $row['senha'] . "</td>";
+    echo "<td>" . $row['cpf'] . "</td>";
+    echo "<td>" . $row['numTel'] . "</td>";
+    echo "<td>" . $row['data_nascimento'] . "</td>";
+    echo "</tr>";
+}
+
+echo "</table>";
+
+$resultado->close();
+$mysqli->close();
+
 
 ?>
 
@@ -38,6 +49,7 @@ if ($result->num_rows > 0) {
   <link rel="stylesheet" href="/learn2work/tela_adm/reset.css">
   <link rel="stylesheet" href="/learn2work/tela_adm/main.css">
   <link rel="stylesheet" href="/learn2work/tela_adm/header.css">
+  <link href="/learn2work/tela_adm/style.css" rel="stylesheet" type="text/css" />
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -56,24 +68,13 @@ if ($result->num_rows > 0) {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre nós</a>
-                  </li>
+                  <!--  -->
                 </ul>
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn">Meu Perfil</a>
                   </form>
                   <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'addvideo.php'">Cadastrar vídeo</a>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'adm.php'">Voltar</a>
                   </form>
 
               </div>
@@ -81,26 +82,47 @@ if ($result->num_rows > 0) {
           </nav>
       </header>
   <main>
-    <div class="jumbotron">
-        <div class="row w-100">
-                <div class="col-md-3">
-                    <div class="card border-white mx-sm-1 p-3" id="caixa">
-                        <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-user" style="color: #bb7ae6" aria-hidden="true"></span></div>
-                        <div class="text-white text-center mt-3"><h4>Usuários</h4></div>
-                        <div class="text-white text-center mt-2"><h1><?php echo $totalPessoas; ?></h1></div>
-                        <button class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;" onclick="window.location.href = 'tabelas.php'">Editar</button>
-                    </div>
-                </div>
-  
-                <div class="col-md-3">
-                    <div class="card border-white mx-sm-1 p-3" id="caixa">
-                        <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-eye" style="color: #bb7ae6" aria-hidden="true"></span></div>
-                        <div class="text-white text-center mt-3"><h4>Vídeos</h4></div>
-                        <div class="text-white text-center mt-2"><h1><?php echo $totalvideo; ?></h1></div>
-                        <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
-                    </div>
-                </div>
-                
+
+  <div class="tabela">
+  <table border="1">
+    <tr>
+      <td>Nome</td>
+      <td>Email</td>
+      <td>Senha</td>
+      <td>Data de nascimento</td>
+      <td>Cpf</td>
+      <td>Número de telefone</td>
+    </tr>
+
+    <?php
+    include('conexao.php');
+
+    $query = "SELECT * FROM usuarios";
+    $resultado = $mysqli->query($query);
+
+    if (!$resultado) {
+        die("Erro ao executar a consulta: " . $mysqli->error);
+    }
+
+    while ($row = $resultado->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['nome'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
+        echo "<td>" . $row['senha'] . "</td>";
+        echo "<td>" . $row['data_nascimento'] . "</td>";
+        echo "<td>" . $row['cpf'] . "</td>";
+        echo "<td>" . $row['numTel'] . "</td>";
+        echo "</tr>";
+    }
+
+    $resultado->close();
+    $mysqli->close();
+    ?>
+
+  </table>
+</div>
+
+                        
   </main>
 
   <div class="container" style="color: whitesmoke;" id="footer">
@@ -127,3 +149,5 @@ if ($result->num_rows > 0) {
 </body>
 
 </html>
+
+
