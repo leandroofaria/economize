@@ -56,25 +56,10 @@ if ($result->num_rows > 0) {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre nós</a>
-                  </li>
-                </ul>
-                <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn">Meu Perfil</a>
-                  </form>
-                  <form class="d-flex" id="button">
+             
+                  <!-- <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'addvideo.php'">Cadastrar vídeo</a>
-                  </form>
+                  </form> -->
 
               </div>
             </div>
@@ -97,7 +82,7 @@ if ($result->num_rows > 0) {
                         <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-eye" style="color: #bb7ae6" aria-hidden="true"></span></div>
                         <div class="text-white text-center mt-3"><h4>Vídeos</h4></div>
                         <div class="text-white text-center mt-2"><h1><?php echo $totalvideo; ?></h1></div>
-                        <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
+                        <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;" onclick="window.location.href = 'addvideo.php'">Cadastrar vídeo</button>
                     </div>
                 </div>
                 

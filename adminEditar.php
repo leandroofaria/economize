@@ -1,17 +1,17 @@
 <?php
 include('conexao.php');
-$consulta = "SELECT * FROM usuarios";
-$con = $mysqli->query($consulta) or die ($mysqli->error);
-
 if(isset($_GET['usuario'])) {
-    $usu_codigo = intval($_GET['usuario']);
+  
+$usu_codigo = intval($_GET['usuario']);
 
-    if(isset($_POST['email'])) {
-        $email = $_POST['email'];
+$consulta = "SELECT * FROM usuarios WHERE id = $usu_codigo";
 
-        $mysqli->query("UPDATE usuarios SET email='$email' WHERE id = $usu_codigo");
-        header('Location: adminEditar.php');
-    }
+if(isset($_POST['email'])) {
+    $email = $_POST['email'];
+
+      $mysqli->query("UPDATE usuarios SET email='$email' WHERE id = $usu_codigo");
+      header('Location: adminEditar.php');
+}
 
     
 if(isset($_POST['nome'])) {
@@ -60,7 +60,10 @@ if(isset($_POST['cpf'])) {
    
    }
    
+} else {
 }
+
+
 
 ?>
 
@@ -102,7 +105,7 @@ if(isset($_POST['cpf'])) {
       </header>
 
   <main>
-  <?php while($dado = $con->fetch_array()){ ?>
+  
     <div class="container">
         <div class="main-body">
 
@@ -117,7 +120,7 @@ if(isset($_POST['cpf'])) {
                         <div class="col-sm-9 text-secondary">
                         </div>
                         <div class="input-group">
-                          <input type="text" name="nome" class="form-control" id="nome" placeholder ="<?php echo $dado["nome"]; ?>">
+                          <input type="text" name="nome" class="form-control" id="nome" placeholder ="">
                           <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                         </div>
                       </div>
@@ -132,7 +135,7 @@ if(isset($_POST['cpf'])) {
                         <div class="col-sm-9 text-secondary">
                         </div>
                         <div class="input-group">
-                          <input input type="text" name="email" class="form-control" id="email" placeholder ="<?php echo $dado["email"]; ?>">
+                          <input input type="text" name="email" class="form-control" id="email" placeholder ="">
                           <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                         </div>
                       </div>
@@ -147,7 +150,7 @@ if(isset($_POST['cpf'])) {
                         <div class="col-sm-9 text-secondary">
                         </div>
                         <div class="input-group">
-                          <input type="text" name="numTel" class="form-control" id="number" placeholder ="<?php echo $dado["numTel"]; ?>">
+                          <input type="text" name="numTel" class="form-control" id="number" placeholder ="">
                           <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                         </div>
                       </div>
@@ -162,7 +165,7 @@ if(isset($_POST['cpf'])) {
                         <div class="col-sm-9 text-secondary">
                         </div>
                         <div class="input-group">
-                          <input type="text" name="cpf" class="form-control" id="cpf" placeholder ="<?php echo $dado["cpf"]; ?>">
+                          <input type="text" name="cpf" class="form-control" id="cpf" placeholder ="">
                           <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                           </div>
                       </div>
@@ -188,7 +191,7 @@ if(isset($_POST['cpf'])) {
     
             </div>
         </div>
-        <?php } ?>
+        
   </main>
 
   <div class="container" style="color: whitesmoke;">
