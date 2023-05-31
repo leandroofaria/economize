@@ -68,7 +68,8 @@ $con = $mysqli->query($consulta) or die ($mysqli->error);
                                 <td><?php echo $dado["numTel"]; ?></td>
                                 <td><?php echo $dado["cpf"]; ?></td>
                                 <td><?php echo date("d/m/Y", strtotime($dado["data_nascimento"])) ?></td>
-                                <td><a href="editar_table.php?usuario=<?php echo $dado["id"]; ?> ">Editar</a>
+                                <td><a href="adminEditar.php?usuario=<?php echo $dado["id"]; ?> ">Editar</a>
+
                                     <a href=" JavaScript: if(confirm('TEm certeza que deseja deletar o usuario <?php echo $dado["nome"];?>?'))
                                     location.href='adminDelete.php?usuario=<?php echo $dado["id"]; ?>';">Excluir</a></td>
                             </tr>
