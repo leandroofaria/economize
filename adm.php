@@ -91,11 +91,7 @@ if ($result->num_rows > 0) {
   <div class="container" style="color: whitesmoke;" id="footer">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a></li>
-        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a></li>
-        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a></li>
-        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre Nós</a></li>
-      </ul>
+       </ul>
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>
   </div>
