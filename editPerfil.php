@@ -202,7 +202,7 @@ if(isset($_POST['cpf'])) {
                 <div class="col-md-8">
                   <div class="card mb-3">
                     <div class="card-body">
-                    <form action="" method="POST" id="form1" onsubmit="return validaEdit(event)">
+                    <form action="" method="POST" id="form1" onsubmit="return validaEdit1(event)">
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Nome Inteiro</h6>
@@ -216,7 +216,7 @@ if(isset($_POST['cpf'])) {
                       </div>
                     </form>
                       <hr>
-                      <form action="" method="POST" id="form2" onsubmit="return validaEdit(event)">
+                      <form action="" method="POST" id="form2" onsubmit="return validaEdit2(event)">
                   
                       <div class="row">
                         <div class="col-sm-3">
@@ -231,8 +231,7 @@ if(isset($_POST['cpf'])) {
                       </div>
                       </form>
                       <hr>
-                      <form action="" method="POST" id="form6" onsubmit="return validaEdit(event)">
-                  
+                      <form action="" method="POST" id="form6" onsubmit="return validaEdit6(event)">
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Celular</h6>
@@ -240,13 +239,13 @@ if(isset($_POST['cpf'])) {
                         <div class="col-sm-9 text-secondary">
                         </div>
                         <div class="input-group">
-                          <input type="text" name="numTel" class="form-control" id="number" placeholder ="<?php echo $user_data['numTel']; ?>">
+                          <input type="text" name="numTel" class="form-control" id="telefone" placeholder ="<?php echo $user_data['numTel']; ?>">
                           <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                         </div>
                       </div>
                         </form>
                       <hr>
-                      <form action="" method="POST" id="form3" onsubmit="return validaEdit(event)">
+                      <form action="" method="POST" id="form3" onsubmit="return validaEdit3(event)">
                   
                       <div class="row">
                         <div class="col-sm-3">
@@ -256,26 +255,13 @@ if(isset($_POST['cpf'])) {
                         </div>
                         <div class="input-group">
                           <input type="password" name="senha" class="form-control" id="password"  placeholder ="•••••••••••••">
-                      </div>
-                      </div>
-                      </form>
-                      <hr>
-                      <form action="" method="POST" id="form4" onsubmit="return validaEdit(event)">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Confirme senha:</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        </div>
-                        <div class="input-group">
-                          <input type="password" name="senha_conf" class="form-control" id="_confirmePassword"  placeholder ="•••••••••••••">
                           <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
-                        </div>
+                      </div>
                       </div>
                       </form>
+                      
+                      <form action="" method="POST" id="form5" onsubmit="return validaEdit4(event)">
                       <hr>
-                      <form action="" method="POST" id="form5" onsubmit="return validaEdit(event)">
-                  
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Cpf</h6>
