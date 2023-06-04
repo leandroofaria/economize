@@ -1,3 +1,7 @@
+<?php
+include('protectADM.php');
+?>
+
 <head>
     <title>Learn 2 Work</title>
     <!-- Required meta tags -->
@@ -24,10 +28,13 @@
               <div class="container-fluid">
                 <a class="navbar-brand" href="#" id="logo"><strong>L2W.</strong></a>
 
+                </div>                  
+                <form class="d-flex" id="button">
+                    <a href="logoutADM.php" class="btn btn-light" id="custom-btn">Sair</a>
+                  </form>
                   <form class="d-flex" id="button">
                       <a href="adm.php" class="btn btn-light" id="custom-btn">Voltar</a>
                     </form>
-                </div>
               </div>
             </nav>
         </header>

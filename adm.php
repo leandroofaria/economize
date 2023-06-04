@@ -1,5 +1,6 @@
 <?php
 include('conexao.php');
+include('protectADM.php');
 
 // Aqui ela está retornando as linhas da tabela usuário(Cada linha é um user cadastrado!)
 // Consulta SQL para contar registros na tabela
@@ -50,11 +51,14 @@ if ($result->num_rows > 0) {
         <nav  id= "custom-header"class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="#" id="logo"><strong>L2W.</strong></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-              >
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-light" ></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              </form>
+                  <form class="d-flex" id="button">
+                    <a href="logoutADM.php" class="btn btn-light" id="custom-btn">Sair</a>
+                  </form>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
              
                   <!-- <form class="d-flex" id="button">

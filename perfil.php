@@ -66,6 +66,9 @@ include('conexao.php');
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_user.php'">HOME</a>
                   </form>
+                  <form class="d-flex" id="button">
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'historico.php'">HISTÓRICO</a>
+                  </form>
               </div>
             </div>
           </nav>
