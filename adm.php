@@ -13,6 +13,15 @@ if ($result->num_rows > 0) {
     $totalPessoas = 0;
 }
 
+$sqlv = "SELECT COUNT(*) as total FROM video";
+$result = $mysqli->query($sqlv);
+// Verifica se a consulta retornou resultados
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $totalvideo = $row["total"];
+} else {
+    $totalvideo = 0;
+}
 
 ?>
 
@@ -47,22 +56,11 @@ if ($result->num_rows > 0) {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre nós</a>
-                  </li>
-                </ul>
-                <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn">Meu Perfil</a>
-                  </form>
+             
+                  <!-- <form class="d-flex" id="button">
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'addvideo.php'">Cadastrar vídeo</a>
+                  </form> -->
+
               </div>
             </div>
           </nav>
@@ -75,27 +73,16 @@ if ($result->num_rows > 0) {
                         <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-user" style="color: #bb7ae6" aria-hidden="true"></span></div>
                         <div class="text-white text-center mt-3"><h4>Usuários</h4></div>
                         <div class="text-white text-center mt-2"><h1><?php echo $totalPessoas; ?></h1></div>
+                        <button class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;" onclick="window.location.href = 'tabelas.php'">Editar</button>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card border-light mx-sm-1 p-3" id="caixa">
-                        <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-pencil" style="color: #bb7ae6" aria-hidden="true"></span></div>
-                        <div class="text-white text-center mt-3"><h4>Professores</h4></div>
-                        <div class="text-white text-center mt-2"><h1>33</h1></div>
-                    </div>
-                </div>
+  
                 <div class="col-md-3">
                     <div class="card border-white mx-sm-1 p-3" id="caixa">
                         <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-eye" style="color: #bb7ae6" aria-hidden="true"></span></div>
                         <div class="text-white text-center mt-3"><h4>Vídeos</h4></div>
-                        <div class="text-white text-center mt-2"><h1>578</h1></div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card border-white mx-sm-1 p-3" id="caixa">
-                    <div class="card text-center border-black shadow text p-3 my-card" id="barra"><span class="fa fa-gear" style="color: #bb7ae6" aria-hidden="true"></span></div>
-                        <div class="text-white text-center mt-3"><h4>Configurações</h4></div>
-                        <div class="text-white text-center mt-2"><h1> -</h1></div>
+                        <div class="text-white text-center mt-2"><h1><?php echo $totalvideo; ?></h1></div>
+                        <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;" onclick="window.location.href = 'addvideo.php'">Cadastrar vídeo</button>
                     </div>
                 </div>
                 
@@ -104,11 +91,7 @@ if ($result->num_rows > 0) {
   <div class="container" style="color: whitesmoke;" id="footer">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a></li>
-        <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a></li>
-        <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a></li>
-        <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre Nós</a></li>
-      </ul>
+       </ul>
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>
   </div>

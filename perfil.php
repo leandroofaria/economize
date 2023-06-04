@@ -4,7 +4,6 @@ include('protect.php');
 include('UserData.php');
 include('conexao.php');
 
-
 ?>
 
 
@@ -62,7 +61,7 @@ include('conexao.php');
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'select_edit.php'">EDITAR</a>
+                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'editPerfil.php'">EDITAR</a>
                   </form>
                 <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'home_user.php'">HOME</a>
@@ -82,7 +81,7 @@ include('conexao.php');
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                          <img src="data:image/jpeg;base64,<?php echo base64_encode($foto_perfil); ?>"  alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <h4><?php echo $user_data['nome']; ?></h4>
                           <div class="input-group">

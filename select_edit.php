@@ -138,17 +138,7 @@ include('UserData.php');
                   <!-- Background image for card set in CSS! -->
                 </div>
                 <div class="card-body p-4 p-sm-5">
-                  <h5 class="card-title text-center mb-5 fw-light fs-5">QUE DADOS QUER EDITAR?</h5>
-                  <a href="editNome.php" class="btn btn-light" id="custom-btn">NOME</a>
-                  <a href="editEmail.php" class="btn btn-light" id="custom-btn">EMAIL</a>
-                  <a href="editSenha.php" class="btn btn-light" id="custom-btn">SENHA</a>
-                  <a href="editDataNasc.php" class="btn btn-light" id="custom-btn">DATA DE NASCIMENTO</a>
-                  <a href="editCelular.php" class="btn btn-light" id="custom-btn">TELEFONE</a>
-                  <a href="editCPF.php" class="btn btn-light" id="custom-btn">CPF</a>
                   <a href="delete.php" class="btn btn-light" id="delete">DELETAR USER</a>
-
-
-
                 </div>
               </div>
             </div>

@@ -9,42 +9,23 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   
       <!-- CSS -->
-      <link rel="stylesheet" href="/L2W/tela_cadastro/reset.css">
-      <link rel="stylesheet" href="/L2W/tela_cadastro/main.css">
-      <link rel="stylesheet" href="/L2W/tela_cadastro/header.css">
+      <link rel="stylesheet" href="/learn2work/tela_cadastro/reset.css">
+      <link rel="stylesheet" href="/learn2work/tela_cadastro/main.css">
+      <link rel="stylesheet" href="/learn2work/tela_cadastro/header.css">
   
           <!-- FONTS -->
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   </head>
-  
   <body>
       <header>
           <nav id= "custom-header"class="navbar navbar-expand-lg bg-body-tertiary">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#" id="logo"><strong>L2W.</strong></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon bg-light" ></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_inicial.php'">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_inicial.php'">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_inicial.php'">Planos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_inicial.php'">Sobre nós</a>
-                    </li>
-                  </ul>
+
                   <form class="d-flex" id="button">
-                      <a href="login.php" class="btn btn-light" id="custom-btn">Entrar</a>
+                      <a href="adm.php" class="btn btn-light" id="custom-btn">Voltar</a>
                     </form>
                 </div>
               </div>
@@ -61,16 +42,21 @@
                   </div>
                   <div class="card-body p-4 p-sm-5">
                     <h5 class="card-title text-center mb-5 fw-light fs-5">Adicionar vídeo</h5>
-                    <form act ion="" method="POST" id="form">
+                    <form action="upload.php" method="POST" id="form" enctype="multipart/form-data">
   
                       <div class="form-floating mb-3">
-                        <input type="text" name="nome" class="form-control" id="nome" placeholder="myusername">
+                        <input type="text" name="titulo" class="form-control" id="nome" placeholder="myusername">
                         <label for="floatingInputUsername">Título</label>
+                      </div>
+
+                      <div class="form-floating mb-3">
+                        <input type="text" name="descricao" class="form-control" id="nome" placeholder="myusername">
+                        <label for="floatingInputUsername">Descrição</label>
                       </div>
                       
                       <div>
                         <label for="formFileLg" class="form-label">Adicione o vídeo aqui</label>
-                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                        <input class="form-control form-control-lg" name="video" accept="video/*" id="formFileLg" type="file">
                       </div>
                       <hr>
                       <div class="d-grid mb-2">
@@ -91,11 +77,7 @@
     <div class="container" style="color: whitesmoke;">
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Home</a></li>
-          <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Catálogo</a></li>
-          <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Planos</a></li>
-          <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = 'home_inicial.php'">Sobre Nós</a></li>
-        </ul>
+         </ul>
         <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
       </footer>
     </div>
