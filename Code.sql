@@ -28,9 +28,7 @@ CREATE TABLE historico (
   user_id INT,
   video_id int,
   video_titulo VARCHAR(400),
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES usuarios(id),
-  FOREIGN KEY (video_id) REFERENCES video(id)
+  PRIMARY KEY (id)
 );
 ####
 USE teste;
