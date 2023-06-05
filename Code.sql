@@ -9,6 +9,7 @@ CREATE TABLE usuarios (
   cpf VARCHAR(11),
   numTel VARCHAR(11),
   data_nascimento DATE,
+  foto_perfil longblob,
   PRIMARY KEY (id)
 );
 ###
