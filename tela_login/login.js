@@ -1,33 +1,28 @@
-const form = document.querySelector('#form');
 const email = document.querySelector('#mail');
 const senha = document.querySelector('#password');
 
 
-form.addEventListener("submit", (e) =>{
-    e.preventDefault();
-
-
-    if(email.value === "" || !isEmailValido(mail.value)){
-        alert("Insira seu email correto!");
+function validaFormulario(event){
+    //valida email(beta)
+    if(email.value === "" || !isEmailValido(email.value)){
+        alert("Insira um email válido!");
+        event.preventDefault();
         return;
     }
-
-    if(senha.value === "" || !validaPassword(password.value)){
-        alert("A senha precisa de 5 characteres, sendo um numero e um caracter maiusculo");
+    //verifica a senha(beta)
+    if(senha.value === "" || !validaPassword(senha.value)){
+        alert("A senha de conter no mínimo 8 caracteres, pelo menos uma letra maiúscula e um número");
+        event.preventDefault();
         return;
     }
-    else{
-        window.location = "/tela_home_user/index.html"
-    }
-});
+};
 
-function isEmailValido(mail){
+function isEmailValido(email){
     const emailRegex = new RegExp(
         //usario@host.com e etc
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
     );
-
-    if (emailRegex.test(mail)){
+    if (emailRegex.test(email)){
         return true;
     }else{
         return false;
@@ -35,16 +30,13 @@ function isEmailValido(mail){
 }
 
 //Funcao valida senha(não é a confirmação)
-function validaPassword(password){
+function validaPassword(senha){
     const senhaRegex = new RegExp(
-        /^(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z$*&@#]{5,}$/
+        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
     );
-    if (senhaRegex.test(password)){
+    if (senhaRegex.test(senha)){
         return true;
     }else{
         return false;
     }
 }
-
-
-console.log(email.textContent);

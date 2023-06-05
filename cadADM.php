@@ -6,9 +6,8 @@ if(isset($_POST['email'])) {
  $email = $_POST['email'];
  $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
  $nome = $_POST['nome'];
- $data_nascimento = $_POST["data_nascimento"];
 
- $mysqli->query("INSERT INTO adm(email, senha, nome, data_nascimento) VALUES('$email', '$senha', '$nome', '$data_nascimento')");
+ $mysqli->query("INSERT INTO adm(email, senha, nome) VALUES('$email', '$senha', '$nome')");
  header('location: adm.php');
 }
 
@@ -129,7 +128,7 @@ if(isset($_POST['email'])) {
 
 
   <!-- Bootstrap JavaScript Libraries -->
-  <script src="/learn2work/tela_cadastro/cad01.js"></script>
+  <script src="/learn2work/tela_ADM/cadADM.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

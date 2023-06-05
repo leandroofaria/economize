@@ -110,7 +110,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
                     </div>
                     <div class="card-body p-4 p-sm-5">
                       <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
-                      <form action="" id="form" method="POST">
+                      <form action="" id="form" method="POST" onsubmit="return validaFormulario(event)">
           
                         <div class="form-floating mb-3">
                         <input type="text" name = "email" class="form-control" id="mail" placeholder="myemail">
@@ -148,6 +148,8 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
           <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
         </footer>
       </div>
+
+      <script src="/learn2work/tela_login/loginADM.js"></script>
 
 </body>
 
