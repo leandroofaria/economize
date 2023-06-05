@@ -138,7 +138,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="btn-group">
                         <input type="hidden" name="video_id" value="1">
                         <input type="hidden" name="video_titulo" value="Vídeo do cavalo">
-                        <input type="submit" value="Assistir" type="button" class="btn btn-sm btn-outline-light">
+                        <input id='playButton' type="submit" value="Assistir" type="button" class="btn btn-sm btn-outline-light">
+                        <a type="submit" type="button" class="btn btn-sm btn-outline-light" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
                       
                       
                       <script>
@@ -168,6 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="hidden" name="video_id" value="2">
                         <input type="hidden" name="video_titulo" value="Adm de tempo">
                         <input type="submit" value="Assistir" type="button" class="btn btn-sm btn-outline-light">
+                        <a type="submit" type="button" class="btn btn-sm btn-outline-light" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
                     </div>
                     <small class="text-body-secondary">15 mins</small>
                   </div>
@@ -186,6 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="hidden" name="video_id" value="3">
                         <input type="hidden" name="video_titulo" value="Postura Social E No Trabalho">
                         <input type="submit" value="Assistir" type="button" class="btn btn-sm btn-outline-light">
+                        <a type="submit" type="button" class="btn btn-sm btn-outline-light" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
                     </div>
                     <small class="text-body-secondary">8 mins</small>
                   </div>
@@ -211,29 +214,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
     </footer>
   </div>
-
-  <h1>Histórico de Visualizações</h1>
-
-  <?php
-// Exibir o histórico de visualizações
-$query = "SELECT video_titulo FROM historico WHERE user_id = $user_id";
-$result = $mysqli->query($query);
-
-if ($result->num_rows > 0) {
-    echo '<select>';
-    while ($row = $result->fetch_assoc()) {
-        echo '<option>'.$row['video_titulo'].'</option>';
-    }
-    echo '</select>';
-} else {
-    echo '<select>';
-    echo '<option>Nada visualizado</option>';
-    echo '</select>';
-}
-?>
-
-
-
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

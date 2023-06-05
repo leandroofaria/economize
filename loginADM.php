@@ -1,3 +1,4 @@
+
 <?php
 
 include('conexao.php');
@@ -12,7 +13,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     $email = $mysqli->real_escape_string($_POST['email']);
     $senha = $mysqli->real_escape_string($_POST['senha']);
 
-    $sql_code = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";
+    $sql_code = "SELECT * FROM adm WHERE email = '$email' LIMIT 1";
     $sql_query = $mysqli->query($sql_code) or die("FALHA NA EXECUÇÃO DO CÓDIGO SQL: " . $mysqli->error);
 
     $quantidade = $sql_query->num_rows;
@@ -30,7 +31,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 
         
 
-        header("Location: home_user.php");
+        header("Location: adm.php");
 
       } else{
           echo "Falha ao logar, senha ou email incorretos!";
@@ -84,21 +85,13 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_inicial.php'">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_inicial.php'">Catálogo</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_inicial.php'">Planos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_inicial.php'">Sobre nós</a>
-                  </li>
+
                 </ul>
                 <form class="d-flex" id="button">
                     <a href="cad1.php" class="btn btn-light" id="custom-btn">Cadastrar</a>
+                  </form>
+                  <form class="d-flex" id="button">
+                    <a href="tela_inicialADM.php" class="btn btn-light" id="custom-btn">Voltar</a>
                   </form>
               </div>
             </div>
@@ -117,7 +110,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
                     </div>
                     <div class="card-body p-4 p-sm-5">
                       <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
-                      <form action="" id="form" method="POST" onsubmit ="return validaFormulario(event)">
+                      <form action="" id="form" method="POST" onsubmit="return validaFormulario(event)">
           
                         <div class="form-floating mb-3">
                         <input type="text" name = "email" class="form-control" id="mail" placeholder="myemail">
@@ -137,18 +130,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
                         <a class="d-block text-center mt-2 small" href="cad1.php">Não possui uma conta? Crie uma aqui!</a>
           
                         <hr class="my-4">
-          
-                        <!-- <div class="d-grid mb-2">
-                          <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                            <i class="fab fa-google me-2"></i> Entrar com o Google
-                          </button>
-                        </div>
-          
-                        <div class="d-grid">
-                          <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                            <i class="fab fa-facebook-f me-2"></i> Entrar com o FAcebook
-                          </button>
-                        </div> -->
+
           
                       </form>
                     </div>
@@ -162,16 +144,13 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
       <div class="container" style="color: whitesmoke;">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Home</a></li>
-            <li class="nav-item"><a href="#local-catalog" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Catálogo</a></li>
-            <li class="nav-item"><a href="#local-plans" class="nav-link px-2 text-body-secondary" style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Planos</a></li>
-            <li class="nav-item"><a href="#local-about" class="nav-link px-2 text-body-secondary"style="color: whitesmoke;" onclick="window.location.href = '/tela_home_inicial/index.html'">Sobre Nós</a></li>
-          </ul>
+           </ul>
           <p class="text-center text-body-secondary">Learn2Work &copy; 2023 Company, Inc</p>
         </footer>
       </div>
-      <script src="/learn2work/tela_login/login.js"></script>     
- 
+
+      <script src="/learn2work/tela_login/loginADM.js"></script>
+
 </body>
 
 </html>

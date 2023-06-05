@@ -1,3 +1,29 @@
+<?php
+include('protect.php');
+include('UserData.php');
+
+// Recuperar a nota selecionada pelo usuário
+$nota = isset($_POST['selected_rating']) ? $_POST['selected_rating'] : null;
+
+$user_id = $_SESSION['id'];
+
+$sql = "INSERT INTO avaliacao (id_user, nota) VALUES ('$user_id', '$nota')";
+
+// Verificar conexão
+if ($mysqli->connect_error) {
+  die("Falha na conexão: " . $conn->connect_error);
+}
+
+// Inserir os dados na tabela "avaliacao"
+$sql = "INSERT INTO avaliacao (id_user, nota) VALUES ('$user_id', '$nota')";
+
+
+
+// Fechar a conexão com o banco de dados
+$mysqli->close();
+?>
+
+
 <head>
     <title>Learn 2 Work</title>
     <!-- Required meta tags -->
@@ -18,7 +44,9 @@
           <!-- FONTS -->
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/learn2work/avaliacao/avaliar.css">
   </head>
   
   <body>
@@ -33,20 +61,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_inicial.php'">Home</a>
+                      <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_inicial.php'">Catálogo</a>
+                      <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_inicial.php'">Planos</a>
+                      <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Planos</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_inicial.php'">Sobre nós</a>
+                      <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Sobre nós</a>
                     </li>
                   </ul>
                   <form class="d-flex" id="button">
-                      <a href="login.php" class="btn btn-light" id="custom-btn">Entrar</a>
+                      <a href="home_user.php" class="btn btn-light" id="custom-btn">Voltar</a>
                     </form>
                 </div>
               </div>
@@ -63,7 +91,7 @@
                   </div>
                   <div class="card-body p-4 p-sm-5">
                     <h5 class="card-title text-center mb-5 fw-light fs-5">Avaliar</h5>
-                    <form act ion="" method="POST" id="form">
+                    <form action="" method="POST" id="form">
                         <div class="form-group" id="rating-ability-wrapper">
                             <label class="control-label" for="rating">
                             <span class="field-label-header">O que você achou dessa aula?*</span><br>
@@ -73,21 +101,22 @@
                             <h2 class="bold rating-header" style="">
                             <span class="selected-rating">0</span><small> / 5</small>
                             </h2>
-                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
+                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" name = '1' id="rating-star-1">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                             </button>
-                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" name = '2' id="rating-star-2">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                             </button>
-                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" name = '3' id="rating-star-3">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                             </button>
-                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" name = '4' id="rating-star-4">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                             </button>
-                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+                            <button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" name ="5" id="rating-star-5">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                             </button>
+                            <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Enviar</button>
                         </div>
                     </form>
                   </div>
@@ -114,7 +143,7 @@
   
   
     <!-- Bootstrap JavaScript Libraries -->
-    <script src=""></script>
+    <script src="/learn2work/avaliacao/avaliar.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

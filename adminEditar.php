@@ -1,4 +1,5 @@
 <?php
+include('protectADM.php');
 include('conexao.php');
 if(isset($_GET['usuario'])) {
   
@@ -98,6 +99,10 @@ if(isset($_POST['cpf'])) {
             <div class="container-fluid">
                   <form class="d-flex" id="button">
                     <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'tabelas.php'">Voltar</a>
+                  </form>
+                  </form>
+                  <form class="d-flex" id="button">
+                    <a href="logoutADM.php" class="btn btn-light" id="custom-btn">Sair</a>
                   </form>
               </div>
             </div>

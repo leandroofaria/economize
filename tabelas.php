@@ -1,5 +1,6 @@
 <?php
 include('conexao.php');
+include('protectADM.php');
 
 $consulta = "SELECT * FROM usuarios";
 $con = $mysqli->query($consulta) or die ($mysqli->error);
@@ -45,6 +46,9 @@ $con = $mysqli->query($consulta) or die ($mysqli->error);
                 </ul>
                 <form class="d-flex" id="button">
                     <a href="adm.php" class="btn btn-light" id="custom-btn">Voltar</a>
+                  </form>
+                  <form class="d-flex" id="button">
+                    <a href="logoutADM.php" class="btn btn-light" id="custom-btn">Sair</a>
                   </form>
               </div>
             </div>

@@ -1,4 +1,5 @@
 <?php
+include('protectADM.php');
 include('conexao.php');
 
 $usu_codigo = intval($_GET['usuario']);
