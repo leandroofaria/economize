@@ -23,7 +23,6 @@ $sql = "INSERT INTO avaliacao (id_user, nota) VALUES ('$user_id', '$nota')";
 $mysqli->close();
 ?>
 
-?>
 
 <head>
     <title>Learn 2 Work</title>
