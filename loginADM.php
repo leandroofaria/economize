@@ -88,7 +88,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="cad1.php" class="btn btn-light" id="custom-btn">Cadastrar</a>
+                    <a href="cadADM.php" class="btn btn-light" id="custom-btn">Cadastrar</a>
                   </form>
                   <form class="d-flex" id="button">
                     <a href="tela_inicialADM.php" class="btn btn-light" id="custom-btn">Voltar</a>

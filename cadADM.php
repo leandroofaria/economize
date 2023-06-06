@@ -56,7 +56,7 @@ if(isset($_POST['email'])) {
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
                 <form class="d-flex" id="button">
-                    <a href="login.php" class="btn btn-light" id="custom-btn">Entrar</a>
+                    <a href="loginADM.php" class="btn btn-light" id="custom-btn">Entrar</a>
                   </form>
                   <form class="d-flex" id="button">
                     <a href="tela_inicialADM.php" class="btn btn-light" id="custom-btn">Voltar</a>

@@ -94,25 +94,120 @@ if ($result->num_rows > 0) {
     <hr style="margin-top: 2rem;" id="local-catalog">
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
-
             <h2 class="text-center">CURSOS</h2>
-            <form method="POST" action="telavideo.php">
+            
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="color: black;">
                 <div class="col">
+                  <form method="POST" action="telavideo.php">
                   <div class="card shadow-sm" id="custom-video-card">
                     <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
                     <div class="card-body">
-                      <p class="card-text">teste do video</p>
+                      <p class="card-text">Como fazer curriculo</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                        <input type="hidden" name="video_url" value="Cursos/video/video_6474eb65d68fb.mp4" action="telavideo.php">
-                        <input type="hidden" name="video_titulo" value="Video do cavalo">
-                        <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-             
+                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa36055eea.mp4" action="telavideo.php">
+                          <input type="hidden" name="video_titulo" value="Como fazer curriculo">
+                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <form method="POST" action="telavideo.php">
+                  <div class="card shadow-sm" id="custom-video-card">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
+                    <div class="card-body">
+                      <p class="card-text">Como se vestir em ambiente de trabalho</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa54d238d3.mp4" action="telavideo.php">
+                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <form method="POST" action="telavideo.php">
+                  <div class="card shadow-sm" id="custom-video-card">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
+                    <div class="card-body">
+                      <p class="card-text">Como se portar em ambiente de trabalho</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa59e18cfe.mp4" action="telavideo.php">
+                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <form method="POST" action="telavideo.php">
+                  <div class="card shadow-sm" id="custom-video-card">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
+                    <div class="card-body">
+                      <p class="card-text">Excel básico</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa5ca7d5f7.mp4" action="telavideo.php">
+                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <form method="POST" action="telavideo.php">
+                  <div class="card shadow-sm" id="custom-video-card">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
+                    <div class="card-body">
+                      <p class="card-text">Como arrumar o primeiro emprego</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa75577529.mp4" action="telavideo.php">
+                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <form method="POST" action="telavideo.php">
+                  <div class="card shadow-sm" id="custom-video-card">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
+                    <div class="card-body">
+                      <p class="card-text">Como lidar com o salário</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa66211134.mp4" action="telavideo.php">
+                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
-    </form>
   </main>
 
   <div class="container" style="color: whitesmoke;">
