@@ -46,6 +46,9 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#local-about" id="text-header">Sobre nós</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  id="text-header" href="buscaAnonimo.php">Pesquisar</a>
+                  </li>
                 </ul>
                 <form class="d-flex" id="button">
                   <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'cad1.php'">Cadastrar</a>

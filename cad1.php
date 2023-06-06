@@ -127,10 +127,7 @@ if(isset($_POST['email'])) {
                       <label for="month">Nascimento</label>
                     </div>
 
-                    <!-- <label for="data_nascimento">Data de Nascimento:</label>
-                    <input type="date" name="data_nascimento" id="data_nascimento" required>
-                    <br><br> -->
-
+                    
                   
       
                     <div class="d-grid mb-2">

@@ -106,6 +106,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Sobre nós</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  id="text-header" href="busca.php">Pesquisar</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
                   </li>
                 </ul>
