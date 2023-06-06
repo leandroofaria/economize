@@ -19,40 +19,6 @@ if ($result->num_rows > 0) {
   echo "User not found.";
 }
 
-////////////
-
-// Verificar se o vídeo foi assistido anteriormente
-function verificarHistorico($user_id, $videoId)
-{
-    global $mysqli;
-
-    $query = "SELECT id FROM historico WHERE user_id = $user_id AND video_id = $videoId";
-    $result = $mysqli->query($query);
-
-    return $result->num_rows > 0;
-}
-
-// Adicionar o vídeo ao histórico de visualizações
-function adicionarAoHistorico($user_id, $videoId, $videoTitulo)
-{
-    global $mysqli;
-
-    $query = "INSERT INTO historico (user_id, video_id, video_titulo) VALUES ($user_id, $videoId, '$videoTitulo')";
-    $mysqli->query($query);
-}
-
-
-
-// Verificar se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $videoId = $_POST['video_id'];
-  $videoTitulo = $_POST['video_titulo'];
-
-  // Adicionar o vídeo ao histórico se ainda não estiver lá
-  if (!verificarHistorico($user_id, $videoId)) {
-      adicionarAoHistorico($user_id, $videoId, $videoTitulo);
-  }
-}
 
 
 ?>
@@ -130,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
 
             <h2 class="text-center">CURSOS</h2>
-            <form method="POST" action="home_user.php.">
+            <form method="POST" action="telavideo.php">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="color: black;">
                 <div class="col">
                   <div class="card shadow-sm" id="custom-video-card">
@@ -139,68 +105,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                       <p class="card-text">teste do video</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                        <input type="hidden" name="video_id" value="1">
+                        <input type="hidden" name="video_url" value="Cursos/video/video_6474eb65d68fb.mp4">
                         <input type="hidden" name="video_titulo" value="Vídeo do cavalo">
-                        <input id='playButton' type="submit" value="Assistir" type="button" class="btn btn-sm btn-outline-light">
-                        <a type="submit" type="button" class="btn btn-sm btn-outline-light" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
-                      
-                      
-                      <script>
-                        var playButton = document.getElementById('playButton');
-                        
-                        playButton.addEventListener('click', function() {
-                          var videoURL = 'Cursos/video/video_6474eb65d68fb.mp4'; // Substitua pelo caminho do seu vídeo
-                          window.open(videoURL, '_blank');
-                        });
-                      </script>
-                    </div>
-                    <small class="text-body-secondary">12 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </form>
-          <form method="POST" action="home_user.php.">
-            <div class="col">
-              <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/administracao.jpg" alt="">
-                <div class="card-body">
-                  <p class="card-text">Administração Do Tempo.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <input type="hidden" name="video_id" value="2">
-                        <input type="hidden" name="video_titulo" value="Adm de tempo">
-                        <input type="submit" value="Assistir" type="button" class="btn btn-sm btn-outline-light">
-                        <a type="submit" type="button" class="btn btn-sm btn-outline-light" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
-                    </div>
-                    <small class="text-body-secondary">15 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </form>
-            <form method="POST" action="home_user.php.">
-            <div class="col">
-              <div class="card shadow-sm" id="custom-video-card">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/postura.jpg" alt="">
-                <div class="card-body">
-                  <p class="card-text">Postura Social E No Trabalho</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <input type="hidden" name="video_id" value="3">
-                        <input type="hidden" name="video_titulo" value="Postura Social E No Trabalho">
-                        <input type="submit" value="Assistir" type="button" class="btn btn-sm btn-outline-light">
-                        <a type="submit" type="button" class="btn btn-sm btn-outline-light" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
-                    </div>
-                    <small class="text-body-secondary">8 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </form>
-    
-    
+                        <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
+              </form>
           </div>
         </div>
       </div>

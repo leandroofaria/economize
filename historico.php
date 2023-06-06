@@ -7,8 +7,6 @@ include('protect.php');
 $query = "SELECT video_titulo FROM historico WHERE user_id = $user_id";
 $result = $mysqli->query($query);
 
-
-
 ?>
 
 <head>

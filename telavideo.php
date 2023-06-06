@@ -1,4 +1,10 @@
+<?php
+include('protect.php');
+include('UserData.php');
+include('conexao.php');
 
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -12,6 +18,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/learn2work/tela_video/reset.css">
+    <link rel="stylesheet" href="/learn2work/tela_video/header.css">
 
 </head>
 
@@ -27,24 +37,30 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="text-header">Home</a>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header">Catálogo</a>
+                    <a class="nav-link active" aria-current="page" href="#local-catalog" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Catálogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header">Planos</a>
+                    <a class="nav-link active" aria-current="page" href="#local-plans" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Planos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header">Sobre nós</a>
+                    <a class="nav-link active" aria-current="page" href="#local-about" id="text-header" onclick="window.location.href = 'home_User_inicial.php'">Sobre nós</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  id="text-header" href="busca.php">Pesquisar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
                   </li>
                 </ul>
                 <form class="d-flex" id="button">
-                  <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'cad1.php'">Cadastrar</a>
+                  <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
                 </form>
                 <form class="d-flex" id="button">
-                    <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'login.php'">Entrar</a>
+                    <a href="home_user.php" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'login.php'">Voltar</a>
                   </form>
               </div>
             </div>
@@ -53,23 +69,24 @@
   </header>
 
 
+
   <main>
-    <br> <br> 
-    <div class="container">
-        <div class="row">
-        <div class="col-md-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Titulo do vídeo</h5>
-                </div>
-                <div class="ibox-content">
-                    <figure>
-                        <iframe src="https://www.youtube.com/embed/ESXgJ9-H-2U" frameborder="0" allowfullscreen="" data-aspectratio="0.8211764705882353" style="width: 523px; height: 429.475px;"></iframe>
-                    </figure>
-                </div>
-            </div>
+  <br> <br> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+          </div>
+          <div class="ibox-content">
+            <figure>
+              <iframe src="<?php echo $_POST['video_url']; ?>" frameborder="0" allowfullscreen="" data-aspectratio="0.8211764705882353" style="width: 523px; height: 429.475px;"></iframe>
+            </figure>
+          </div>
         </div>
-  </main>
+      </div>
+    </div>
+</main>
 
 
   <div class="container" style="color: whitesmoke;">
