@@ -105,13 +105,14 @@ if ($result->num_rows > 0) {
                       <p class="card-text">teste do video</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                        <input type="hidden" name="video_url" value="Cursos/video/video_6474eb65d68fb.mp4">
-                        <input type="hidden" name="video_titulo" value="Vídeo do cavalo">
+                        <input type="hidden" name="video_url" value="Cursos/video/video_6474eb65d68fb.mp4" action="telavideo.php">
+                        <input type="hidden" name="video_titulo" value="Video do cavalo">
                         <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-              </form>
+             
           </div>
         </div>
       </div>
+    </form>
   </main>
 
   <div class="container" style="color: whitesmoke;">
