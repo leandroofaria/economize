@@ -1,26 +1,24 @@
 <?php
 include('protect.php');
 include('UserData.php');
+include("conexao.php");
 
-// Recuperar a nota selecionada pelo usuário
-$nota = isset($_POST['selected_rating']) ? $_POST['selected_rating'] : null;
+// Verificar se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  // Recuperar a nota selecionada pelo usuário
+  $nota = isset($_POST['selected_rating']) ? $_POST['selected_rating'] : null;
 
-$user_id = $_SESSION['id'];
+  $user_id = $_SESSION['id'];
 
-$sql = "INSERT INTO avaliacao (id_user, nota) VALUES ('$user_id', '$nota')";
+  $sql = "INSERT INTO avaliacao (id_user, nota) VALUES ('$user_id', '$nota')";
 
-// Verificar conexão
-if ($mysqli->connect_error) {
-  die("Falha na conexão: " . $conn->connect_error);
+  // Executar a consulta
+  if ($mysqli->query($sql) === TRUE) {
+    header("Location: home_user.php");
+  } else {
+    echo "Erro ao inserir a avaliação: " . $mysqli->error;
+  }
 }
-
-// Inserir os dados na tabela "avaliacao"
-$sql = "INSERT INTO avaliacao (id_user, nota) VALUES ('$user_id', '$nota')";
-
-
-
-// Fechar a conexão com o banco de dados
-$mysqli->close();
 ?>
 
 
@@ -91,7 +89,7 @@ $mysqli->close();
                   </div>
                   <div class="card-body p-4 p-sm-5">
                     <h5 class="card-title text-center mb-5 fw-light fs-5">Avaliar</h5>
-                    <form action="" method="POST" id="form">
+                    <form  method="POST" id="form">
                         <div class="form-group" id="rating-ability-wrapper">
                             <label class="control-label" for="rating">
                             <span class="field-label-header">O que você achou dessa aula?*</span><br>
