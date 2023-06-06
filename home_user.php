@@ -124,7 +124,7 @@ if ($result->num_rows > 0) {
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <input type="hidden" name="video_url" value="Cursos/video/video_647fa54d238d3.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <input type="hidden" name="video_titulo" value="Como se vestir em ambiente de trabalho">
                           <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
                         </form>
                         </div>
@@ -138,11 +138,11 @@ if ($result->num_rows > 0) {
                   <div class="card shadow-sm" id="custom-video-card">
                     <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
                     <div class="card-body">
-                      <p class="card-text">Como se portar em ambiente de trabalho</p>
+                      <p class="card-text">Como se vestir em ambiente de trabalho</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <input type="hidden" name="video_url" value="Cursos/video/video_647fa59e18cfe.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <input type="hidden" name="video_titulo" value="Como se vestir em ambiente de trabalho">
                           <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
                         </form>
                         </div>
@@ -160,7 +160,7 @@ if ($result->num_rows > 0) {
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <input type="hidden" name="video_url" value="Cursos/video/video_647fa5ca7d5f7.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <input type="hidden" name="video_titulo" value="Excel básico">
                           <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
                         </form>
                         </div>
@@ -178,7 +178,7 @@ if ($result->num_rows > 0) {
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <input type="hidden" name="video_url" value="Cursos/video/video_647fa75577529.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <input type="hidden" name="video_titulo" value="Como arrumar o primeiro emprego">
                           <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
                         </form>
                         </div>
@@ -196,7 +196,7 @@ if ($result->num_rows > 0) {
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <input type="hidden" name="video_url" value="Cursos/video/video_647fa66211134.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Video do cavalo">
+                          <input type="hidden" name="video_titulo" value="Como lidar com o salário">
                           <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
                         </form>
                         </div>
