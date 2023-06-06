@@ -117,7 +117,7 @@ if(isset($_POST['cpf'])) {
                 <div class="col-md-8">
                   <div class="card mb-3">
                     <div class="card-body">
-                    <form action="" method="POST" id="form1" onsubmit="return validaEdit(event)">
+                    <form action="" method="POST" id="form1" onsubmit="return validaEdit1(event)">
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Nome Inteiro</h6>
@@ -131,7 +131,7 @@ if(isset($_POST['cpf'])) {
                       </div>
                     </form>
                       <hr>
-                      <form action="" method="POST" id="form2" onsubmit="return validaEdit(event)">
+                      <form action="" method="POST" id="form2" onsubmit="return validaEdit2(event)">
                   
                       <div class="row">
                         <div class="col-sm-3">
@@ -146,7 +146,7 @@ if(isset($_POST['cpf'])) {
                       </div>
                       </form>
                       <hr>
-                      <form action="" method="POST" id="form6" onsubmit="return validaEdit(event)">
+                      <form action="" method="POST" id="form6" onsubmit="return validaEdit6(event)">
                   
                       <div class="row">
                         <div class="col-sm-3">
@@ -161,7 +161,7 @@ if(isset($_POST['cpf'])) {
                       </div>
                         </form>
                       <hr>
-                      <form action="" method="POST" id="form5" onsubmit="return validaEdit(event)">
+                      <form action="" method="POST" id="form5" onsubmit="return validaEdit4(event)">
                   
                       <div class="row">
                         <div class="col-sm-3">
@@ -206,7 +206,7 @@ if(isset($_POST['cpf'])) {
   </div>
 
 
-  <script src="/learn2work/edit_user/editUser.js"></script>
+  <script src="/learn2work/edit_user/editUserADM.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
