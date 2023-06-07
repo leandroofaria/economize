@@ -144,10 +144,9 @@ if(isset($_POST['cpf'])) {
                           <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
                         </div>
                       </div>
-                      </form>
+      <!--                </form>
                       <hr>
-                      <form action="" method="POST" id="form6" onsubmit="return validaEdit6(event)">
-                  
+                      <form action="" method="POST" onsubmit="return validaEdit6(event)">
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Celular</h6>
@@ -155,11 +154,24 @@ if(isset($_POST['cpf'])) {
                         <div class="col-sm-9 text-secondary">
                         </div>
                         <div class="input-group">
-                          <input type="text" name="numTel" class="form-control" id="number" placeholder ="">
-                          <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
+                          <input type="text" name="numTel" class="form-control" id="number" placeholder="">
+                          <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase" style="background-color: blueviolet;">Editar</button>
                         </div>
                       </div>
-                        </form>
+                    </form>
+
+                    <script>
+                    function validaEdit6(event) {
+                      var input = document.getElementById("number").value;
+                      var regex = /^\d{11}$/;
+                      if (input.trim() === "" || !regex.test(input)) {
+                        alert("Por favor, insira um número de celular válido com 11 dígitos.");
+                        event.preventDefault();
+                        return false;
+                      }
+                      return true;
+                    }
+                    </script>-->
                       <hr>
                       <form action="" method="POST" id="form5" onsubmit="return validaEdit4(event)">
                   
@@ -207,6 +219,7 @@ if(isset($_POST['cpf'])) {
 
 
   <script src="/learn2work/edit_user/editUserADM.js"></script>
+  <script src="/learn2work/edit_user/editUser.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
