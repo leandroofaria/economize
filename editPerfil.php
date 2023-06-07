@@ -189,9 +189,20 @@ if(isset($_POST['cpf'])) {
                       <div class="d-flex flex-column align-items-center text-center">
                         <img src="data:image/jpeg;base64,<?php echo base64_encode($foto_perfil); ?>" alt="Admin" class="rounded-circle" width="150">
                         <div class="mb-3">
-                          <label for="formFileSm" class="form-label">Mudar foto</label>
-                          <input name="foto_perfil" class="form-control form-control-sm" id="formFileSm" type="file">
-                          <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Editar</button>
+                        <label for="formFileSm" class="form-label">Mudar foto</label>
+                        <input name="foto_perfil" class="form-control form-control-sm" id="myInput" type="file" required>
+                        <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase" style="background-color: blueviolet;" onclick="return validateForm()">Editar</button>
+
+                        <script>
+                        function validateForm() {
+                          var input = document.getElementById("myInput").value;
+                          if (input === "") {
+                            alert("Por favor, preencha o campo.");
+                            return false;
+                          }
+                          return true;
+                        }
+                        </script>
                         </div>
                           <h4><?php echo $user_data['nome']; ?></h4>
                       </div>
@@ -297,8 +308,9 @@ if(isset($_POST['cpf'])) {
                         <div class="col-sm-9 text-secondary">
                         </div>
                         <div class="input-group">
-                        <a href="delete.php" type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">Confirmar</a>
-                          </div>
+                          <a href=" JavaScript: if(confirm('Tem certeza que deseja deletar o usuario <?php echo $user_data['nome'];?>?'))
+                          location.href='delete.php';">Excluir</a></td>
+                        </div>
                       </div>
                       </form>
                     </div>

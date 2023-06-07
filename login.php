@@ -33,10 +33,8 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         header("Location: home_user.php");
 
       } else{
-          echo "Falha ao logar, senha ou email incorretos!";
       }
     } else {
-        echo 'FALHA AO LOGAR! E-MAIL OU SENHA INCORRETOS!';
   }
 }
 } 
