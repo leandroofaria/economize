@@ -180,24 +180,28 @@ if(isset($_POST['cpf'])) {
   <main>
     <div class="container">
         <div class="main-body">
-              <!-- /Breadcrumb -->
-              <form action="" method="POST" id="form" enctype="multipart/form-data">
-              <div class="row gutters-sm">
-                <div class="col-md-4 mb-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="d-flex flex-column align-items-center text-center">
-                        <img src="data:image/jpeg;base64,<?php echo base64_encode($foto_perfil); ?>" alt="Admin" class="rounded-circle" width="150">
-                        <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Mudar foto</label>
-                        <input name="foto_perfil" class="form-control form-control-sm" id="myInput" type="file" required>
-                        <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase" style="background-color: blueviolet;" onclick="return validateForm()">Editar</button>
-
-                        <script>
+        <form action="" method="POST" id="form" enctype="multipart/form-data">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($foto_perfil); ?>" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mb-3">
+                      <label for="formFileSm" class="form-label">Mudar foto</label>
+                      <input name="foto_perfil" class="form-control form-control-sm" id="myInput" type="file" accept="image/*" required>
+                      <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase" style="background-color: blueviolet;" onclick="return validateForm()">Editar</button>
+            
+                      <script>
                         function validateForm() {
-                          var input = document.getElementById("myInput").value;
-                          if (input === "") {
-                            alert("Por favor, preencha o campo.");
+                          var input = document.getElementById("myInput");
+                          var file = input.files[0];
+                          if (!file) {
+                            alert("Por favor, selecione um arquivo.");
+                            return false;
+                          }
+                          if (!file.type.startsWith("image/")) {
+                            alert("Por favor, selecione um arquivo de imagem válido.");
                             return false;
                           }
                           return true;
