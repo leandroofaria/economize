@@ -57,13 +57,13 @@ include('protectADM.php');
                       </div>
 
                       <div class="form-floating mb-3">
-                        <input type="text" name="descricao" class="form-control" id="nome" placeholder="myusername">
+                        <input type="text" name="descricao" class="form-control" id="descricao" placeholder="myusername">
                         <label for="floatingInputUsername">Descrição</label>
                       </div>
                       
                       <div>
                         <label for="formFileLg" class="form-label">Adicione o vídeo aqui</label>
-                        <input class="form-control form-control-lg" name="video" accept="video/*" id="formFileLg" type="file">
+                        <input class="form-control form-control-lg" name="video" accept="video/*" id="videos" type="file">
                       </div>
                       <hr>
                       <div class="d-grid mb-2">
@@ -91,8 +91,7 @@ include('protectADM.php');
   
   
     <!-- Bootstrap JavaScript Libraries -->
-    <script src=""></script>
-    
+    <script src="/learn2work/tela_video/addvideo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
@@ -102,4 +101,4 @@ include('protectADM.php');
     </script>
   </body>
   
-  </html>
+</html>
