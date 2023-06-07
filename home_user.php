@@ -138,7 +138,7 @@ if ($result->num_rows > 0) {
                   <div class="card shadow-sm" id="custom-video-card">
                     <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
                     <div class="card-body">
-                      <p class="card-text">Como se vestir em ambiente de trabalho</p>
+                      <p class="card-text">Como se comportar em ambiente de trabalho</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <input type="hidden" name="video_url" value="Cursos/video/video_647fa59e18cfe.mp4" action="telavideo.php">

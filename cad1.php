@@ -11,8 +11,21 @@ if(isset($_POST['email'])) {
  $senhaConf = $_POST['senha_conf'];
  $data_nascimento = $_POST["data_nascimento"];
 
- $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
+
+ // Consulta o banco de dados para verificar se o CPF está duplicado
+$query = "SELECT * FROM usuarios WHERE cpf = '$cpf'";
+$result = $mysqli->query($query);
+
+// Verifica se houve algum resultado retornado
+if ($result->num_rows > 0) {
+  // O CPF está duplicado
+   ?>  <script> alert("CPF já cadastrado");</script> <?php  
+} else { $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
  header('location: home_user.php');
+}
+
+
+
 }
 
 
@@ -90,24 +103,23 @@ if(isset($_POST['email'])) {
                 <div class="card-body p-4 p-sm-5">
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastro</h5>
                   <form action="" method="POST" id="form" onsubmit="return validaFormulario(event)">
-
                     <div class="form-floating mb-3">
                       <input type="text" name="nome" class="form-control" id="nome" placeholder="myusername">
                       <label for="floatingInputUsername">Nome Completo</label>
                     </div>
-      
+
                     <div class="form-floating mb-3">
                       <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
                       <label for="floatingInputEmail">Email</label>
                     </div>
-      
+
                     <hr>
-      
+
                     <div class="form-floating mb-3">
                       <input type="password" name="senha" class="form-control" id="password"  placeholder="Password" >
                       <label for="floatingPassword">Senha</label>
                     </div>
-      
+
                     <div class="form-floating mb-3">
                       <input type="password" name="senha_conf" class="form-control" id="_confirmePassword"  placeholder="Confirm Password"  >
                       <label for="floatingPasswordConfirm">Confirme a Senha</label>
@@ -116,40 +128,51 @@ if(isset($_POST['email'])) {
                       <input type="text" name="cpf" class="form-control" id="cpf" placeholder="mycpf">
                       <label for="cpf">CPF</label>
                     </div>
-      
+
                     <div class="form-floating mb-3">
                       <input type="text" name="numTel" class="form-control" id="number" placeholder="name@example.com">
                       <label for="phoneNumber">Número De Celular</label>
                     </div>
-      
+
                     <div class="form-floating mb-3">
                       <input type="date" name="data_nascimento" class="form-control" id="month" placeholder="Password">
                       <label for="month">Nascimento</label>
                     </div>
 
-                    
-                  
-      
                     <div class="d-grid mb-2">
                       <button type="submit" class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase"  style="background-color: blueviolet;">CONTINUAR</button>
                     </div>
-      
+
                     <a class="d-block text-center mt-2 small" href="login.php">Já possui uma conta? Entre!</a>
-      
-                    <!-- <hr class="my-4">
-      
-                    <div class="d-grid mb-2">
-                      <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                        <i class="fab fa-google me-2"></i> Entrar com o Google
-                      </button>
-                    </div>
-      
-                    <div class="d-grid">
-                      <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                        <i class="fab fa-facebook-f me-2"></i> Entrar com o Facebook
-                      </button> -->
-                    </div>
-                  </form>
+
+                    </form>
+
+                    <script>
+                    function validaFormulario(event) {
+                      // Obtém o valor do CPF inserido pelo usuário
+                      var cpf = document.getElementById("cpf").value;
+
+                      // Faz uma requisição assíncrona para verificar se o CPF está duplicado
+                      var xhr = new XMLHttpRequest();
+                      xhr.open("POST", "cad1.php", true);
+                      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                      xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                          var response = xhr.responseText;
+                          if (response === "duplicado") {
+                            alert("CPF duplicado! Por favor, insira um CPF válido.");
+                            event.preventDefault(); // Impede o envio do formulário
+                          } else {
+                            // O CPF não está duplicado, o formulário pode ser enviado
+                            document.getElementById("form").submit();
+                          }
+                        }
+                      };
+                      xhr.send("cpf=" + cpf);
+
+                      return false; // Impede o envio do formulário
+                    }
+                    </script>
                 </div>
               </div>
             </div>

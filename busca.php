@@ -76,7 +76,7 @@ include('protect.php');
                   <h1 >Lista de Vídeos</h1>
                 <form action="">  
                   <input type="text" name="busca" placeholder="Busque aqui" class="form-control">
-                  <button type="submit"  class="btn btn-lg btn-outline-light btn-login fw-bold text-uppercase">Pesquisar</button>
+                  <button type="submit" class="btn btn-outline-light btn-login fw-bold text-uppercase" style="background-color: blueviolet;">Pesquisar</button>
                 </form>
                 <table width="400px">
                   <tr>
