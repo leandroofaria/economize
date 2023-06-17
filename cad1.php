@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
   // O CPF está duplicado
    ?>  <script> alert("CPF já cadastrado");</script> <?php  
 } else { $mysqli->query("INSERT INTO usuarios(email, senha, nome, cpf, numTel, data_nascimento) VALUES('$email', '$senha', '$nome', '$cpf', '$numTel', '$data_nascimento')");
- header('location: home_user.php');
+ header('location: login.php');
 }
 
 

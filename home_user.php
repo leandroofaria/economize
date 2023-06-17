@@ -19,7 +19,8 @@ if ($result->num_rows > 0) {
   echo "User not found.";
 }
 
-
+$sql = "SELECT titulo, nome_arquivo FROM video";
+$result = $mysqli->query($sql);
 
 ?>
 
@@ -95,117 +96,35 @@ if ($result->num_rows > 0) {
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
             <h2 class="text-center">CURSOS</h2>
-            
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="color: black;">
-                <div class="col">
-                  <form method="POST" action="telavideo.php">
-                  <div class="card shadow-sm" id="custom-video-card">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
-                    <div class="card-body">
-                      <p class="card-text">Como fazer curriculo</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa36055eea.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Como fazer curriculo">
-                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <form method="POST" action="telavideo.php">
-                  <div class="card shadow-sm" id="custom-video-card">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
-                    <div class="card-body">
-                      <p class="card-text">Como se vestir em ambiente de trabalho</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa54d238d3.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Como se vestir em ambiente de trabalho">
-                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <form method="POST" action="telavideo.php">
-                  <div class="card shadow-sm" id="custom-video-card">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
-                    <div class="card-body">
-                      <p class="card-text">Como se comportar em ambiente de trabalho</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa59e18cfe.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Como se vestir em ambiente de trabalho">
-                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <form method="POST" action="telavideo.php">
-                  <div class="card shadow-sm" id="custom-video-card">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
-                    <div class="card-body">
-                      <p class="card-text">Excel básico</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa5ca7d5f7.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Excel básico">
-                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <form method="POST" action="telavideo.php">
-                  <div class="card shadow-sm" id="custom-video-card">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
-                    <div class="card-body">
-                      <p class="card-text">Como arrumar o primeiro emprego</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa75577529.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Como arrumar o primeiro emprego">
-                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <form method="POST" action="telavideo.php">
-                  <div class="card shadow-sm" id="custom-video-card">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="250" src="/learn2work/img/comunicacao.jpg" alt="">
-                    <div class="card-body">
-                      <p class="card-text">Como lidar com o salário</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <input type="hidden" name="video_url" value="Cursos/video/video_647fa66211134.mp4" action="telavideo.php">
-                          <input type="hidden" name="video_titulo" value="Como lidar com o salário">
-                          <button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+            <?php 
+            if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $titulo = $row['titulo'];
+                $url = $row['nome_arquivo'];
+                // Exibir o vídeo na página
+                echo '<div class="col">';
+                echo '<div class="card shadow-sm" id="custom-video-card">';
+                echo '<div class="card-body"';
+                echo '<p class="card-text">' . $titulo . '</p>';
+                echo '<div class="d-flex justify-content-between align-items-center">';
+                echo '<div class="btn-group">';
+                echo '<form method="POST" action="telavideo.php">';
+                echo '<input type="hidden" name="video_url" value="' . $url . '">';
+                echo '<input type="hidden" name="video_titulo" value="' . $titulo . '">';
+                echo '<button type="submit" class="btn btn-sm btn-outline-light">Assistir</button>';
+                echo '</form>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '';
+                echo '';
+                echo '';
+                echo '';
+    }
+}
+       ?>       
         </div>
       </div>
   </main>

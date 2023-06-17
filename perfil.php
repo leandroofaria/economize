@@ -84,7 +84,15 @@ include('conexao.php');
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                          <img src="data:image/jpeg;base64,<?php echo base64_encode($foto_perfil); ?>"  alt="Admin" class="rounded-circle" width="150">
+                      <?php
+                          if (empty($foto_perfil)) {
+                            // Exibe a imagem padrão quando o campo de foto de perfil estiver vazio
+                            echo '<img src="/learn2work/img/img_perfil.jpg" alt="Imagem Padrão" class="rounded-circle" width="150">';
+                          } else {
+                            // Exibe a imagem do usuário
+                            echo '<img src="data:image/jpeg;base64,'.base64_encode($foto_perfil).'" alt="Admin" class="rounded-circle" width="150">';
+                          }
+                        ?>
                         <div class="mt-3">
                           <h4><?php echo $user_data['nome']; ?></h4>
                           <div class="input-group">
@@ -93,7 +101,7 @@ include('conexao.php');
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> 
                   
                 </div>
                 <div class="col-md-8">

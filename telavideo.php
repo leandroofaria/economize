@@ -69,8 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <a class="nav-link active" aria-current="page"  id="text-header" href="logout.php">Sair</a>
               </li>
             </ul>
-            <form class="d-flex" id="button">
-              <a href="#" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
+            <form method="POST" action="avaliar.php" id="form">
+               <?php echo '<input type="hidden" name="video_titulo" value="' . $video_titulo . '">';  ?>
+              <a type="submit" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'avaliar.php'">Avaliar</a>
             </form>
             <form class="d-flex" id="button">
                 <a href="home_user.php" class="btn btn-light" id="custom-btn" onclick="window.location.href = 'login.php'">Voltar</a>

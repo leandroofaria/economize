@@ -7,10 +7,11 @@ include("conexao.php");
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // Recuperar a nota selecionada pelo usuário
   $nota = isset($_POST['selected_rating']) ? $_POST['selected_rating'] : null;
+  $video_titulo = isset($_POST['video_titulo']) ? $_POST['video_titulo'] : null;
+  echo "Título do vídeo: " . $video_titulo;
 
   $user_id = $_SESSION['id'];
-
-  $sql = "INSERT INTO avaliacao (id_user, nota) VALUES ('$user_id', '$nota')";
+  $sql = "INSERT INTO avaliacao (id_user, nota, titulo_curso) VALUES ('$user_id', '$nota', '$video_titulo')";
 
   // Executar a consulta
   if ($mysqli->query($sql) === TRUE) {

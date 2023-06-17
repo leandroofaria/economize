@@ -106,7 +106,7 @@ include('protect.php');
                         while($dados = $sql_query->fetch_assoc()){
                           ?>
                         <tr>
-                          <td ><?php echo $dados['titulo']; ?></td>
+                          <td ><?php echo $dados['titulo']; ?> <a href="home_user.php">Assistir</a></td>
                         </tr>
                       <?php
                       }
